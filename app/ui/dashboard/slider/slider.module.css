@@ -1,0 +1,4 @@
+.swiper-slide-fully-visible>img, .swiper-slide-prev>img{
+    transition: all 15s ease-in-out;
+    transform: scale(1.12, 1.12);
+}
