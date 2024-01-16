@@ -1,8 +1,7 @@
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import 'swiper/css/autoplay';
-@import 'swiper/css/effect-fade';
+@import 'swiper/swiper.min.css';
+@import 'swiper/modules/navigation.min.css';
+@import 'swiper/modules/autoplay.min.css';
+@import 'swiper/modules/effect-fade.min.css';
 
 @tailwind base;
 @tailwind components;
