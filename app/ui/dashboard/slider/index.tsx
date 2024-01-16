@@ -1,4 +1,7 @@
 "use client";
+import "swiper/swiper.min.css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
