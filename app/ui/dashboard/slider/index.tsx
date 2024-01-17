@@ -1,7 +1,11 @@
 "use client";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import Image from "next/image";
+
 import "@/app/ui/dashboard/slider/slider.module.css";
 
 const slides = [
