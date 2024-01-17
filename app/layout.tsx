@@ -1,8 +1,7 @@
+"use client";
 import "@/app/ui/global.css";
-import "@/app/ui/dashboard/slider/slider.module.css";
 import { sora } from "@/app/ui/fonts";
 import { Navbar } from "@/app/ui/dashboard/navbar";
-import { Slider as Slider2 } from "@/app/ui/dashboard/sliderold";
 import { Slider } from "@/app/ui/dashboard/slider";
 
 export default function RootLayout({
