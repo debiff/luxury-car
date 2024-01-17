@@ -43,45 +43,36 @@ const slides = [
   }
 ];
 export const Slider = () => {
-  const [counter, setCounter] = useState(1);
-  const [pause, setPause] = useState(false);
-
-  const handleNext = () => {
-    if (counter !== slides.length) {
-      setCounter(counter + 1);
-    } else {
-      setCounter(1);
-    }
-  };
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      if (!pause) {
-        handleNext();
-      } else {
-        clearInterval(interval);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  });
-
   return (
-    <div className="slide">
-      {slides.map((slide, index) => (
-        <div
-          className={counter - 1 === index ? styles.show : styles.notShow}
-          key={index}
-        >
-          <Image
-            id={`slide-img-${slide.id.toString()}`}
-            src={slide.src}
-            width={slide.width}
-            height={slide.height}
-            className={`h-screen object-cover object-center absolute top-0 max-w-fit md:max-w-full md:left-0 ${slide.customClassName}`}
-            alt={slide.alt}
-          />
-        </div>
-      ))}
+    <div className={"relative mt-[-69px] md:mt-[-77px] h-screen"}>
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        effect={"fade"}
+        speed={2000}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          waitForTransition: true
+        }}
+        loop={true}
+        className={"h-screen"}
+        direction={"horizontal"}
+        watchSlidesProgress
+        allowTouchMove={false}
+      >
+        {slides.map(slide => (
+          <SwiperSlide key={slide.id} className={"overflow-hidden absolute"}>
+            <Image
+              id={`slide-img-${slide.id.toString()}`}
+              src={slide.src}
+              width={slide.width}
+              height={slide.height}
+              className={`h-screen object-cover object-center absolute top-0 max-w-fit md:max-w-full md:left-0 ${slide.customClassName}`}
+              alt={slide.alt}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

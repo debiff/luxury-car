@@ -22,8 +22,7 @@ export default function RootLayout({
                     `}
       >
         <Navbar />
-        <Slider2 />
-        {/*<Slider />*/}
+        <Slider />
         {children}
       </body>
     </html>
