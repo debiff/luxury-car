@@ -1,4 +1,39 @@
-.swiper-slide-fully-visible>img, .swiper-slide-prev>img{
-    transition: all 15s ease-in-out;
-    transform: scale(1.12, 1.12);
+.slide {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    height: 40vh;
+}
+
+.show {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fade 1.5s ease-in-out;
+}
+
+.show > div {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.notShow {
+    display: none;
+}
+
+.page {
+    text-align: center;
 }
