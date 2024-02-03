@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 
 import "@/app/ui/dashboard/slider/slider.module.css";
+import { epilogue } from "@/app/ui/fonts";
+import { Button } from "@/app/ui/commons/Button";
 
 const slides = [
   {
@@ -73,6 +75,12 @@ export const Slider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div
+        className={`${epilogue.className} absolute bottom-[15%] left-[5%] text-white max-w-[40%] z-40`}
+      >
+        <h2>Need to Rent a Luxury Car? Send A Request</h2>
+        <Button>SEND</Button>
+      </div>
     </div>
   );
 };

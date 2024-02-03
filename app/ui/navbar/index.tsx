@@ -4,8 +4,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { inconsolata } from "@/app/ui/fonts";
-import { MenuButton } from "@/app/ui/dashboard/navbar/MenuButton";
-import { MenuItems } from "@/app/ui/dashboard/navbar/MenuItems";
+import { MenuButton } from "@/app/ui/navbar/MenuButton";
+import { MenuItems } from "@/app/ui/navbar/MenuItems";
 
 export const Navbar = () => {
   const [transparentBackground, setTransparentBackground] = useState(true);

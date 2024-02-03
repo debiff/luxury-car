@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+h2 {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.30952em;
+  word-wrap: break-word;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.42857em;
+  word-wrap: break-word;
+}
+
 .main-menu {
   display: flex;
   align-items: center;

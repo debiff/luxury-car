@@ -1,0 +1,40 @@
+.button {
+
+}
+.plus::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 11px;
+    position: absolute;
+    top: calc(50% + 1px);
+    left: -18px;
+    transform-origin: center;
+    transform: translateY(-54.5454%) scaleY(1);
+    transition: transform .3s ease;
+    background-color: #fff;
+}
+
+.plus::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 5px;
+    position: absolute;
+    top: calc(50% + 3px);
+    left: -23px;
+    transform-origin: center;
+    transform: translateY(-100%) scale(1,.2);
+    transition: transform .3s ease,border-radius .3s ease;
+    background-color: #fff;
+}
+
+
+.button:hover .plus::before{
+    transform: translateY(-54.5454%) scaleY(0);
+}
+
+.button:hover .plus::after{
+    transform: translateY(-100%) scale(.4545,1);
+    border-radius: 50%;
+}

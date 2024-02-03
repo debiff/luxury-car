@@ -1,8 +1,6 @@
-"use client";
 import "@/app/ui/global.css";
 import { sora } from "@/app/ui/fonts";
-import { Navbar } from "@/app/ui/dashboard/navbar";
-import { Slider } from "@/app/ui/dashboard/slider";
+import { Navbar } from "@/app/ui/navbar";
 
 export default function RootLayout({
   children
@@ -22,7 +20,6 @@ export default function RootLayout({
                     `}
       >
         <Navbar />
-        <Slider />
         {children}
       </body>
     </html>
