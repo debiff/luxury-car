@@ -1,10 +1,12 @@
 import { epilogue, inconsolata } from "@/app/ui/fonts";
 import Image from "next/image";
-import styles from "@/app/ui/dashboard/callUs/callUs.module.css";
+import styles from "@/app/ui/home/callUs/callUs.module.css";
 
 export const CallUs = () => {
   return (
-    <section className={`${epilogue.className} flex pt-[117px] px-16`}>
+    <section
+      className={`${epilogue.className} flex pt-[117px] px-16 bg-[#141a1c]`}
+    >
       <div className={"w-1/2"}>
         <h2 className={"text-white"}>
           What We Provide Is The Luxury Transport And Most Comfortable

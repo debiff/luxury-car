@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
+import { Rating } from "@/app/ui/commons/rating";
 
 const cars = [
   {
     id: 1,
-    name: "Mercedes Benz S-Class",
+    name: "Bmw X2 M35i DriveX",
     image: "/vehicle-list-1.jpeg",
     price: 100,
     category: "Luxury",
@@ -110,15 +111,21 @@ export const CarPreview = () => {
   };
 
   return (
-    <section className={"pt-[109px] pb-[106px] px-16"}>
+    <section className={"pt-[109px] pb-[106px] px-16 bg-[#141a1c]"}>
       <div className="grid grid-cols-3 gap-x-7 gap-y-16">
         {cars.map(car => (
-          <a href={"#"} key={car.id}>
-            <div key={car.id} className={"relative"}>
-              <Image src={car.image} alt={car.name} width={800} height={1027} />
-              <motion.div initial="rest" whileHover="hover" animate="rest">
-                <motion.div
-                  className="
+          <div key={car.id}>
+            <a href={"#"}>
+              <div className={"relative"}>
+                <Image
+                  src={car.image}
+                  alt={car.name}
+                  width={800}
+                  height={1027}
+                />
+                <motion.div initial="rest" whileHover="hover" animate="rest">
+                  <motion.div
+                    className="
                 box
                 w-full
                 h-full
@@ -135,69 +142,78 @@ export const CarPreview = () => {
                 bg-[#0c1315]
                 bg-opacity-[.85]
                 "
-                  variants={backgroundMotion}
-                >
-                  <motion.h4
-                    className={`${epilogue.className} text-white`}
-                    variants={categoryMotion}
+                    variants={backgroundMotion}
                   >
-                    {car.category}
-                  </motion.h4>
-                  <motion.div
-                    className={`${sora.className} flex items-end`}
-                    variants={priceMotion}
-                  >
-                    <span
-                      className={`
+                    <motion.h4
+                      className={`${epilogue.className} text-white`}
+                      variants={categoryMotion}
+                    >
+                      {car.category}
+                    </motion.h4>
+                    <motion.div
+                      className={`${sora.className} flex items-end`}
+                      variants={priceMotion}
+                    >
+                      <span
+                        className={`
                         text-[#a6a6a6] 
                         text-base 
                         leading-7 
                         font-normal`}
-                    >
-                      from
-                    </span>
-                    <span
-                      className={`
+                      >
+                        from
+                      </span>
+                      <span
+                        className={`
                         text-[#bfa37c] 
                         inline-flex 
                         text-4xl 
                         leading-none`}
-                    >
-                      <span
-                        className={`
+                      >
+                        <span
+                          className={`
                         self-start
                         pt-1
                         text-xl
                         leading-none
                         `}
-                      >
-                        $
+                        >
+                          $
+                        </span>
+                        <span>180</span>
                       </span>
-                      <span>180</span>
-                    </span>
-                    <span
-                      className={`
+                      <span
+                        className={`
                     text-[#bfa37c]
                     before:content-['/']
                     before:mx-1
                     `}
-                    >
-                      hour
-                    </span>
-                  </motion.div>
-                  <motion.div
-                    variants={descriptionMotion}
-                    className={`
+                      >
+                        hour
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      variants={descriptionMotion}
+                      className={`
                       mt-8
                       text-[#a6a6a6]
                     `}
-                  >
-                    {car.description}
+                    >
+                      {car.description}
+                    </motion.div>
                   </motion.div>
                 </motion.div>
-              </motion.div>
+              </div>
+            </a>
+            <div
+              className={`${epilogue.className} mt-8 flex flex-col items-center`}
+            >
+              <a href={"#"}>
+                <h5 className={"text-white"}>{car.name}</h5>
+              </a>
+              <Rating rating={5} maxRating={5} />
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

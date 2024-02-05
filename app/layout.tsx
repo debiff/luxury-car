@@ -1,6 +1,7 @@
 import "@/app/ui/global.css";
 import { sora } from "@/app/ui/fonts";
 import { Navbar } from "@/app/ui/navbar";
+import { Footer } from "@/app/ui/footer";
 
 export default function RootLayout({
   children
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

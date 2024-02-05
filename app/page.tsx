@@ -1,7 +1,8 @@
 "use client";
-import { Slider } from "@/app/ui/dashboard/slider";
-import { CallUs } from "@/app/ui/dashboard/callUs";
-import { CarPreview } from "@/app/ui/dashboard/carPreview";
+import { Slider } from "@/app/ui/home/slider";
+import { CallUs } from "@/app/ui/home/callUs";
+import { CarPreview } from "@/app/ui/home/carPreview";
+import { Review } from "@/app/ui/home/review";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <Slider />
       <CallUs />
       <CarPreview />
+      <Review />
     </main>
   );
 }

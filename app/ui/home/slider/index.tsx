@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 
-import "@/app/ui/dashboard/slider/slider.module.css";
+import "@/app/ui/home/slider/slider.module.css";
 import { epilogue } from "@/app/ui/fonts";
 import { Button } from "@/app/ui/commons/Button";
 
