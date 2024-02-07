@@ -1,8 +1,26 @@
 import React from "react";
+import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 
 type Props = {
   className?: string;
 };
+
+type MenuItemProps = {
+  label: string;
+  url?: string;
+};
+
+export const MenuItem: React.FC<MenuItemProps> = ({ label, url }) => (
+  <li key={label} className={"relative group"}>
+    <a className={`${styles.item}`} href={url}>
+      <div
+        className={`translate-x-0 duration-700 ease-in-out group-hover:translate-x-4`}
+      >
+        {label}
+      </div>
+    </a>
+  </li>
+);
 export const MenuItems: React.FC<Props> = ({ className }) => {
   const items = [
     { label: "Home" },
@@ -16,15 +34,7 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
     <nav className={className}>
       <ul className="flex flex-row gap-4 main-menu uppercase">
         {items.map(item => (
-          <li key={item.label} className={"relative group"}>
-            <a>
-              <div
-                className={`translate-x-0 duration-700 ease-in-out group-hover:translate-x-4`}
-              >
-                {item.label}
-              </div>
-            </a>
-          </li>
+          <MenuItem key={item.label} label={item.label} />
         ))}
       </ul>
     </nav>

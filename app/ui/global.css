@@ -42,24 +42,6 @@ h5 {
   margin: 0 20px;
 }
 
-li a::after{
-  content: "";
-  display: block;
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  border-radius: 50%;
-  transform: translate(50%,-50%) scale(0);
-  background-color: currentColor;
-  transition: transform .6s ease;
-}
-
-li>a:hover::after {
-  transform: translate(50%,-50%) scale(1);
-}
-
 svg {
   stroke-miterlimit:10;
   transform: translateZ(0);
