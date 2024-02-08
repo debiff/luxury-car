@@ -1,10 +1,3 @@
-.slide {
-    position: relative;
-    left: 20%;
-    width: 60%;
-    height: 40vh;
-}
-
 .show {
     position: absolute;
     width: 100%;

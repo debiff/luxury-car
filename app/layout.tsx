@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={"overflow-x-hidden"}>
       <body
         className={`${sora.className} 
                     antialiased 
@@ -18,6 +18,7 @@ export default function RootLayout({
                     leading-7 
                     text-gray-400 
                     font-normal
+                    overflow-x-hidden
                     `}
       >
         <Navbar />
