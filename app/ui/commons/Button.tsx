@@ -10,7 +10,20 @@ export const Button = ({ children, className, ...rest }: ButtonProps) => {
     <button
       {...rest}
       className={clsx(
-        `${styles.button} ${inconsolata.className} text-[14px] tracking-[.25em] leading-[25px] mt-[15px] mb-[14px] pt-[17px] pl-[60px] pr-[47px] pb-[17px] border border-[#BFA37C]`,
+        `${styles.button}
+        ${inconsolata.className}
+        inline-flex
+        text-[14px]
+        tracking-[.25em]
+        leading-[25px]
+        mt-[15px]
+        mb-[14px]
+        pt-[17px]
+        pl-[60px]
+        pr-[47px]
+        pb-[17px]
+        border
+        border-[#BFA37C]`,
         className
       )}
     >
