@@ -5,16 +5,16 @@ import styles from "@/app/ui/home/callUs/callUs.module.css";
 export const CallUs = () => {
   return (
     <section
-      className={`${epilogue.className} flex pt-[117px] px-16 bg-[#141a1c]`}
+      className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:pt-[117px] pl-8 pr-4 md:px-16 bg-[#141a1c] `}
     >
-      <div className={"w-1/2"}>
+      <div className={"md:w-1/2"}>
         <h2 className={"text-white"}>
           What We Provide Is The Luxury Transport And Most Comfortable
           Experience
         </h2>
       </div>
-      <div className={"w-1/2"}>
-        <div className={"pl-[14.5%]"}>
+      <div className={"my-3.5 md:w-1/2 md:my-0"}>
+        <div className={"md:pl-[14.5%]"}>
           <p className={"text-[#a6a6a6] mt-[10px] mb-[20px]"}>
             Vivamus arcu felis bibendum ut tristique et egestas. Ultricies leo
             intege in malesuada nunc vel risus commodo. Sapien nec sagittis
