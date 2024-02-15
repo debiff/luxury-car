@@ -6,10 +6,10 @@ import { MenuItem } from "@/app/ui/navbar/MenuItems";
 export const Footer = () => {
   return (
     <footer>
-      <div className={"border-t border-[#2d363e] w-full px-16"}>
+      <div className={"border-t border-[#2d363e] w-full pl-8 pr-4 md:px-16"}>
         <div className={"pt-[131px] pb-[123px]"}>
-          <div className={`${style.footerGrid} grid gap-x-24 relative`}>
-            <div>
+          <div className={`${style.footerGrid} md:grid md:gap-x-24 relative`}>
+            <div className={"mb-[66px] md:mb-0"}>
               <div className={"mb-9"}>
                 <Image
                   src={"/logo-gold.png"}
