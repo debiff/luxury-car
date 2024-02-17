@@ -2,7 +2,7 @@
 import { Slider } from "@/app/ui/home/slider";
 import { CallUs } from "@/app/ui/home/callUs";
 import { CarPreview } from "@/app/ui/home/carPreview";
-import { Review } from "@/app/ui/home/review";
+import { Reviews } from "@/app/ui/home/review";
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
       <Slider />
       <CallUs />
       <CarPreview />
-      <Review />
+      <Reviews />
     </main>
   );
 }

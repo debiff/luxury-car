@@ -2,8 +2,19 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
 import { Rating } from "@/app/ui/commons/rating";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
-const cars = [
+type Car = {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  category: string;
+  description: string;
+};
+
+const cars: ReadonlyArray<Car> = [
   {
     id: 1,
     name: "Bmw X2 M35i DriveX",
@@ -53,7 +64,8 @@ const cars = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
   }
 ];
-export const CarPreview = () => {
+
+const Car = (car: Car) => {
   const backgroundMotion = {
     rest: { opacity: 0, ease: "easeOut", duration: 0.4, type: "tween" },
     hover: {
@@ -111,21 +123,13 @@ export const CarPreview = () => {
   };
 
   return (
-    <section className={"pt-[109px] pb-[106px] px-16 bg-[#141a1c]"}>
-      <div className="grid grid-cols-3 gap-x-7 gap-y-16">
-        {cars.map(car => (
-          <div key={car.id}>
-            <a href={"#"}>
-              <div className={"relative"}>
-                <Image
-                  src={car.image}
-                  alt={car.name}
-                  width={800}
-                  height={1027}
-                />
-                <motion.div initial="rest" whileHover="hover" animate="rest">
-                  <motion.div
-                    className="
+    <div key={car.id} className={"mb-14 md:mb-auto"}>
+      <a href={"#"}>
+        <div className={"relative"}>
+          <Image src={car.image} alt={car.name} width={800} height={1027} />
+          <motion.div initial="rest" whileHover="hover" animate="rest">
+            <motion.div
+              className="
                 box
                 w-full
                 h-full
@@ -142,78 +146,94 @@ export const CarPreview = () => {
                 bg-[#0c1315]
                 bg-opacity-[.85]
                 "
-                    variants={backgroundMotion}
-                  >
-                    <motion.h4
-                      className={`${epilogue.className} text-white`}
-                      variants={categoryMotion}
-                    >
-                      {car.category}
-                    </motion.h4>
-                    <motion.div
-                      className={`${sora.className} flex items-end`}
-                      variants={priceMotion}
-                    >
-                      <span
-                        className={`
+              variants={backgroundMotion}
+            >
+              <motion.h4
+                className={`${epilogue.className} text-white`}
+                variants={categoryMotion}
+              >
+                {car.category}
+              </motion.h4>
+              <motion.div
+                className={`${sora.className} flex items-end`}
+                variants={priceMotion}
+              >
+                <span
+                  className={`
                         text-[#a6a6a6] 
                         text-base 
                         leading-7 
                         font-normal`}
-                      >
-                        from
-                      </span>
-                      <span
-                        className={`
+                >
+                  from
+                </span>
+                <span
+                  className={`
                         text-[#bfa37c] 
                         inline-flex 
                         text-4xl 
                         leading-none`}
-                      >
-                        <span
-                          className={`
+                >
+                  <span
+                    className={`
                         self-start
                         pt-1
                         text-xl
                         leading-none
                         `}
-                        >
-                          $
-                        </span>
-                        <span>180</span>
-                      </span>
-                      <span
-                        className={`
+                  >
+                    $
+                  </span>
+                  <span>180</span>
+                </span>
+                <span
+                  className={`
                     text-[#bfa37c]
                     before:content-['/']
                     before:mx-1
                     `}
-                      >
-                        hour
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      variants={descriptionMotion}
-                      className={`
+                >
+                  hour
+                </span>
+              </motion.div>
+              <motion.div
+                variants={descriptionMotion}
+                className={`
                       mt-8
                       text-[#a6a6a6]
                     `}
-                    >
-                      {car.description}
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </a>
-            <div
-              className={`${epilogue.className} mt-8 flex flex-col items-center`}
-            >
-              <a href={"#"}>
-                <h5 className={"text-white"}>{car.name}</h5>
-              </a>
-              <Rating rating={5} maxRating={5} />
-            </div>
-          </div>
+              >
+                {car.description}
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </a>
+      <div className={`${epilogue.className} mt-8 flex flex-col items-center`}>
+        <a href={"#"}>
+          <h5 className={"text-white"}>{car.name}</h5>
+        </a>
+        <Rating rating={5} maxRating={5} />
+      </div>
+    </div>
+  );
+};
+
+export const CarPreview = () => {
+  return (
+    <section
+      className={
+        "pt-[98px] md:pt-[109px] pb-[106px] pl-8 pr-4 md:px-16 bg-[#141a1c]"
+      }
+    >
+      <div className="hidden md:grid grid-cols-3 gap-x-7 gap-y-16">
+        {cars.map(car => (
+          <Car key={car.id} {...car} />
+        ))}
+      </div>
+      <div className={"md:hidden flex flex-col"}>
+        {cars.map(car => (
+          <Car key={car.id} {...car} />
         ))}
       </div>
     </section>
