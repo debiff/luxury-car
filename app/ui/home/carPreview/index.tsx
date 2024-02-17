@@ -223,7 +223,7 @@ export const CarPreview = () => {
   return (
     <section
       className={
-        "pt-[98px] md:pt-[109px] pb-[106px] pl-8 pr-4 md:px-16 bg-[#141a1c]"
+        "pt-[98px] md:pt-[109px] pb-[106px] px-8 md:px-16 bg-[#141a1c]"
       }
     >
       <div className="hidden md:grid grid-cols-3 gap-x-7 gap-y-16">

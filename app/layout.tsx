@@ -18,7 +18,6 @@ export default function RootLayout({
                     leading-7 
                     text-gray-400 
                     font-normal
-                    overflow-x-hidden
                     `}
       >
         <Navbar />

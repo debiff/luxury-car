@@ -23,7 +23,6 @@ export const Navbar = () => {
     <header
       className={clsx(
         `
-          block
           ${inconsolata.className}
           py-7
           flex
