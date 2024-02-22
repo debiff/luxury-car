@@ -32,7 +32,7 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
 
   return (
     <nav className={className}>
-      <ul className="flex flex-row gap-4 main-menu uppercase">
+      <ul className="items-start md:items-center flex flex-col md:flex-row gap-4 main-menu uppercase ">
         {items.map(item => (
           <MenuItem key={item.label} label={item.label} />
         ))}

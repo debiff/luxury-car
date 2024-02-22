@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import { inconsolata } from "@/app/ui/fonts";
 import { MenuButton } from "@/app/ui/navbar/MenuButton";
 import { MenuItems } from "@/app/ui/navbar/MenuItems";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [transparentBackground, setTransparentBackground] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const changeNavButton = () => {
     if (window.scrollY >= 30) {
       setTransparentBackground(false);
@@ -19,6 +21,12 @@ export const Navbar = () => {
   useEffect(() => {
     window.addEventListener("scroll", changeNavButton);
   }, []);
+
+  const variants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: "-100%" }
+  };
+
   return (
     <header
       className={clsx(
@@ -55,7 +63,30 @@ export const Navbar = () => {
       </a>
 
       <MenuItems className={"hidden md:block"} />
-      <MenuButton />
+      <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)} />
+      <motion.nav
+        className={`fixed
+          md:hidden
+          top-[69px]
+          left-0
+          z-40
+          overflow-y-auto
+          flex
+          justify-left
+          items-center
+          bg-[#0c1315]
+          w-full
+          px-[7%]
+          pt-6
+          pb-10
+          `}
+        initial="closed"
+        animate={isMenuOpen ? "open" : "closed"}
+        variants={variants}
+        transition={{ duration: 0.5 }}
+      >
+        <MenuItems />
+      </motion.nav>
     </header>
   );
 };

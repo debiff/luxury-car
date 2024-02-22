@@ -32,7 +32,6 @@ h5 {
 
 .main-menu {
   display: flex;
-  align-items: center;
   height: 100%;
   white-space: nowrap;
   position: relative;
