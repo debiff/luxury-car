@@ -12,7 +12,6 @@
     transform-origin: center;
     transform: translateY(-54.5454%) scaleY(1);
     transition: transform .3s ease;
-    background-color: #fff;
 }
 
 .plus::after {
@@ -26,7 +25,6 @@
     transform-origin: center;
     transform: translateY(-100%) scale(1,.2);
     transition: transform .3s ease,border-radius .3s ease;
-    background-color: #fff;
 }
 
 

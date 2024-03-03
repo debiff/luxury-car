@@ -2,68 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
 import { Rating } from "@/app/ui/commons/rating";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-
-type Car = {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  category: string;
-  description: string;
-};
-
-const cars: ReadonlyArray<Car> = [
-  {
-    id: 1,
-    name: "Bmw X2 M35i DriveX",
-    image: "/vehicle-list-1.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  },
-  {
-    id: 2,
-    name: "Mercedes Benz S-Class",
-    image: "/vehicle-list-2.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  },
-  {
-    id: 3,
-    name: "Mercedes Benz S-Class",
-    image: "/vehicle-list-3.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  },
-  {
-    id: 1,
-    name: "Mercedes Benz S-Class",
-    image: "/vehicle-list-1.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  },
-  {
-    id: 2,
-    name: "Mercedes Benz S-Class",
-    image: "/vehicle-list-2.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  },
-  {
-    id: 3,
-    name: "Mercedes Benz S-Class",
-    image: "/vehicle-list-3.jpeg",
-    price: 100,
-    category: "Luxury",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-  }
-];
+import { Cars, Car } from "@/app/lib/placeholder-car";
 
 const Car = (car: Car) => {
   const backgroundMotion = {
@@ -126,7 +65,14 @@ const Car = (car: Car) => {
     <div key={car.id} className={"mb-14 md:mb-auto"}>
       <a href={"#"}>
         <div className={"relative"}>
-          <Image src={car.image} alt={car.name} width={800} height={1027} />
+          {car.imagePreview && (
+            <Image
+              src={car.imagePreview}
+              alt={car.name}
+              width={800}
+              height={1027}
+            />
+          )}
           <motion.div initial="rest" whileHover="hover" animate="rest">
             <motion.div
               className="
@@ -203,7 +149,7 @@ const Car = (car: Car) => {
                       text-[#a6a6a6]
                     `}
               >
-                {car.description}
+                {car.descriptionShort}
               </motion.div>
             </motion.div>
           </motion.div>
@@ -227,12 +173,12 @@ export const CarPreview = () => {
       }
     >
       <div className="hidden md:grid grid-cols-3 gap-x-7 gap-y-16">
-        {cars.map(car => (
+        {Cars.filter(c => c.previewCar === true).map(car => (
           <Car key={car.id} {...car} />
         ))}
       </div>
       <div className={"md:hidden flex flex-col"}>
-        {cars.map(car => (
+        {Cars.filter(c => c.previewCar === true).map(car => (
           <Car key={car.id} {...car} />
         ))}
       </div>

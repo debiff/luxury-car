@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   className?: string;
@@ -7,34 +9,36 @@ type Props = {
 
 type MenuItemProps = {
   label: string;
-  url?: string;
+  url: string;
 };
 
 export const MenuItem: React.FC<MenuItemProps> = ({ label, url }) => (
   <li key={label} className={"relative group"}>
-    <a className={`${styles.item}`} href={url}>
+    <Link className={`${styles.item}`} href={url}>
       <div
         className={`translate-x-0 duration-700 ease-in-out group-hover:translate-x-4`}
       >
         {label}
       </div>
-    </a>
+    </Link>
   </li>
 );
 export const MenuItems: React.FC<Props> = ({ className }) => {
+  const pathname = usePathname();
+
   const items = [
-    { label: "Home" },
-    { label: "Pages" },
-    { label: "Vehicle fleet" },
-    { label: "Blog" },
-    { label: "Shop" }
+    { label: "Home", href: "/" },
+    { label: "Pages", href: "/pages" },
+    { label: "Vehicle fleet", href: "/fleet" },
+    { label: "Blog", href: "/blog" },
+    { label: "Shop", href: "/shop" }
   ];
 
   return (
     <nav className={className}>
       <ul className="items-start md:items-center flex flex-col md:flex-row gap-4 main-menu uppercase ">
         {items.map(item => (
-          <MenuItem key={item.label} label={item.label} />
+          <MenuItem key={item.label} label={item.label} url={item.href} />
         ))}
       </ul>
     </nav>

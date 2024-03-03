@@ -79,7 +79,7 @@ export const Slider = () => {
         className={`${epilogue.className} absolute bottom-[15%] left-[5%] text-white max-w-[40%] z-40`}
       >
         <h2>Need to Rent a Luxury Car? Send A Request</h2>
-        <Button>SEND</Button>
+        <Button variant={"primary"}>SEND</Button>
       </div>
     </div>
   );
