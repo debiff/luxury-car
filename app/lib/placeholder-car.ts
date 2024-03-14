@@ -9,6 +9,7 @@ export type Car = {
   category: string;
   descriptionShort: string;
   previewCar?: boolean;
+  gallery?: ReadonlyArray<string>;
 };
 
 export const Cars: ReadonlyArray<Car> = [
@@ -23,7 +24,8 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   },
   {
     id: 2,
@@ -36,7 +38,8 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   },
   {
     id: 3,
@@ -49,7 +52,8 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   },
   {
     id: 4,
@@ -62,7 +66,8 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   },
   {
     id: 5,
@@ -75,7 +80,8 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   },
   {
     id: 6,
@@ -88,6 +94,7 @@ export const Cars: ReadonlyArray<Car> = [
     category: "Luxury",
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true
+    previewCar: true,
+    gallery: ["/cars/1.jpeg", "/cars/2.jpeg", "/cars/3.jpeg", "/cars/4.jpeg"]
   }
 ];
