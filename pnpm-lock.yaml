@@ -59,6 +59,9 @@ dependencies:
   use-debounce:
     specifier: ^10.0.0
     version: 10.0.0(react@18.2.0)
+  yet-another-react-lightbox:
+    specifier: ^3.17.0
+    version: 3.17.0(react-dom@18.2.0)(react@18.2.0)
   zod:
     specifier: ^3.22.2
     version: 3.22.4
@@ -4372,6 +4375,17 @@ packages:
   /yaml@2.3.4:
     resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
     engines: {node: '>= 14'}
+    dev: false
+
+  /yet-another-react-lightbox@3.17.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xtVFmYaMOsqEDitx0ju6wTLVjCIUdS1TLeY2bwwUHapj3coh1uQxEwDAGg8aZiKs+Qd5AcpLOoCfH/T3TKeLTA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /yocto-queue@0.1.0:
