@@ -12,6 +12,7 @@ export const TextInput = ({ placeholder }: Props) => (
     className={`
                     ${inconsolata.className}
                     w-full
+                    md:w-2/3
                     text-[14px]
                     bg-transparent
                     border-0 

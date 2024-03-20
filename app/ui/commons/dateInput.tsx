@@ -6,7 +6,7 @@ type Props = {
 export const DateInput = ({ placeholder }: Props) => {
   const [date, setDate] = useState<string | undefined>(undefined);
   return (
-    <div className={"relative"}>
+    <div className={"relative md:w-2/3"}>
       {!date && (
         <span
           className={`

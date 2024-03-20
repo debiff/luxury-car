@@ -16,7 +16,6 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { TextInput } from "@/app/ui/commons/textInput";
 import { DateInput } from "@/app/ui/commons/dateInput";
 
-
 const slides = [
   {
     src: car1.src,
@@ -409,7 +408,6 @@ const Page = ({ params }: Props) => {
               </Button>
             </div>
           </div>
-
         </div>
 
         <Lightbox
@@ -432,6 +430,7 @@ const Page = ({ params }: Props) => {
               fixed 
               bg-[#0c1315] 
               w-[86%] 
+              md:w-[40%]
               max-h-[calc(100%-60px)] 
               p-[30px] 
               overflow-y-scroll
@@ -461,7 +460,7 @@ const Page = ({ params }: Props) => {
             >
               <XMarkIcon width={"24px"} />
             </div>
-            <div className={"flex flex-col"}>
+            <div className={"flex flex-col md:justify-center md:items-center"}>
               <TextInput placeholder={"Name"} />
               <TextInput placeholder={"Email"} />
               <TextInput placeholder={"Phone"} />
@@ -469,7 +468,9 @@ const Page = ({ params }: Props) => {
               <DateInput placeholder={"Pick up date"} />
               <TextInput placeholder={"Drop off location"} />
               <DateInput placeholder={"Drop off date"} />
-              <Button variant={"modal"}>BOOK NOW</Button>
+              <div className={"md:w-1/2"}>
+                <Button variant={"modal"}>BOOK NOW</Button>
+              </div>
             </div>
           </div>
         </>
