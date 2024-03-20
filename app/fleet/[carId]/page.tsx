@@ -174,7 +174,14 @@ const Page = ({ params }: Props) => {
               <AvailableColors colors={["#000", "#FFF", "#F50", "#1139bb"]} />
             </div>
             <div className={"mt-[5px]"}>
-              <Button variant={"secondary"}>BOOK YOUR CARS</Button>
+              <Button
+                variant={"secondary"}
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
+              >
+                BOOK YOUR CARS
+              </Button>
             </div>
           </section>
 
