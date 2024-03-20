@@ -7,6 +7,8 @@ import { inconsolata } from "@/app/ui/fonts";
 import { MenuButton } from "@/app/ui/navbar/MenuButton";
 import { MenuItems } from "@/app/ui/navbar/MenuItems";
 import { motion } from "framer-motion";
+import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [transparentBackground, setTransparentBackground] = useState(true);
@@ -54,13 +56,9 @@ export const Navbar = () => {
         }
       )}
     >
-      <a
-        itemProp="url"
-        href="https://luxedrive.qodeinteractive.com/"
-        rel="home"
-      >
+      <Link href={"/"}>
         <Image width="121" height="12" src="/logo.png" alt="logo main" />
-      </a>
+      </Link>
 
       <MenuItems className={"hidden md:block"} />
       <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)} />

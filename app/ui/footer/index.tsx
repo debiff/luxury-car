@@ -44,10 +44,10 @@ export const Footer = () => {
               <ul
                 className={`${inconsolata.className} flex flex-col gap-4 uppercase text-white text-sm leading-6 tracking-[.25em]`}
               >
-                <MenuItem label={"Home"} url={"#"} />
-                <MenuItem label={"Pages"} url={"#"} />
-                <MenuItem label={"Vehicle fleet"} url={"#"} />
-                <MenuItem label={"Blog"} url={"#"} />
+                <MenuItem label={"Home"} url={"/"} />
+                {/*<MenuItem label={"Pages"} url={"#"} />*/}
+                <MenuItem label={"Vehicle fleet"} url={"/fleet"} />
+                {/*<MenuItem label={"Blog"} url={"#"} />*/}
               </ul>
             </div>
             <div></div>
