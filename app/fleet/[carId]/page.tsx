@@ -16,6 +16,7 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { TextInput } from "@/app/ui/commons/textInput";
 import { DateInput } from "@/app/ui/commons/dateInput";
 
+
 const slides = [
   {
     src: car1.src,
@@ -131,6 +132,7 @@ const Page = ({ params }: Props) => {
           items-center 
           text-["#404040]
           md:justify-end
+
           `}
         >
           <Link className={`${styles.item}`} href={"/"}>
@@ -407,6 +409,7 @@ const Page = ({ params }: Props) => {
               </Button>
             </div>
           </div>
+
         </div>
 
         <Lightbox
