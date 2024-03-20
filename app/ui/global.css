@@ -71,3 +71,43 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+input.picker[type="date"] {
+  position: relative;
+}
+input.picker[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: transparent;
+  background: transparent;
+}
+
+input[type='date']:not(:focus):in-range::-webkit-datetime-edit-year-field,
+input[type='date']:not(:focus):in-range::-webkit-datetime-edit-month-field,
+input[type='date']:not(:focus):in-range::-webkit-datetime-edit-day-field,
+input[type='date']:not(:focus):in-range::-webkit-datetime-edit-text {
+  color: transparent;
+}
+
+/* iOS background fix */
+& > input[type='date']:empty {
+  background-color: #f9f9f6;
+}
+
+/* iOS fix for text alignment */
+& > input::-webkit-date-and-time-value {
+  text-align: left;
+  color: rebeccapurple;
+}
+
+/* iOS date-placeholder fix */
+& > input[type='date']:not(:focus):empty:after {
+  position: absolute;
+  color: #aaa;
+  content: attr(placeholder);
+}
+

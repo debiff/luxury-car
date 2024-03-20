@@ -4,7 +4,7 @@ import { inconsolata } from "@/app/ui/fonts";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "modal";
 }
 export const Button = ({
   children,
@@ -35,10 +35,11 @@ export const Button = ({
     >
       <span
         className={clsx(`${styles.plus} ml-[23px] relative`, {
-          "before:bg-[#FFF]": variant === "primary",
+          "before:bg-[#FFF]": variant === "primary" || variant === "modal",
           "before:bg-[#000]": variant === "secondary",
-          "after:bg-[#FFF]": variant === "primary",
-          "after:bg-[#000]": variant === "secondary"
+          "after:bg-[#FFF]": variant === "primary" || variant === "modal",
+          "after:bg-[#000]": variant === "secondary",
+          "text-white": variant === "modal"
         })}
       >
         {children}
