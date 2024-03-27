@@ -31,7 +31,9 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
             py-2
             border-b
             border-[#d9d6ce]
+            cursor-pointer
             `}
+          onClick={() => setIsOpen(!isOpen)}
         >
           <span className={""}>{selectedOption?.name ?? defaultOption}</span>
           <span
@@ -46,6 +48,7 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
                 top-0
                 before:content-["3"]
                 before:block
+                cursor-pointer
                 ${elegantIcons.className}
                 `}
             onClick={() => setIsOpen(!isOpen)}
@@ -56,13 +59,11 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
           absolute
           top-[45px]
           w-[332px]
-          border
-          border-[#000]
           block
           z-50
         `}
           animate={{
-            height: isOpen ? 200 : 0,
+            height: isOpen ? "100%" : 0,
             opacity: isOpen ? 1 : 0,
             display: isOpen ? "block" : "none"
           }}
@@ -71,7 +72,7 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
           <motion.span
             initial={false}
             animate={{
-              height: isOpen ? 200 : 0,
+              height: isOpen ? "100%" : 0,
               opacity: isOpen ? 1 : 0,
               display: isOpen ? "block" : "none"
             }}
@@ -81,6 +82,8 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
             max-h-[200px]
             overflow-y-auto
             bg-white
+            border
+            border-[#000]
           `}
             >
               {options.map(option => (

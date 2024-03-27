@@ -15,18 +15,22 @@ import car10_list from "@/public/cars/10.png";
 import car11_list from "@/public/cars/11.png";
 
 type CarImage = { src: string; width: number; height: number };
-type Make =
-  | "Porsche"
-  | "Mercedes"
-  | "Land Rover"
-  | "Audi"
-  | "Ferrari"
-  | "Lamborghini"
-  | "BMW";
+export const make = [
+  "Porsche",
+  "Mercedes",
+  "Land Rover",
+  "Audi",
+  "Ferrari",
+  "Lamborghini",
+  "BMW"
+] as const;
+export type Make = (typeof make)[number];
+export const category = ["Luxury", "Sport", "SUV", "Truck", "Van"] as const;
+export type Category = (typeof category)[number];
 export type Car = {
   id: number;
   name: string;
-  category: string;
+  category: Category;
   make: Make;
   imageList: CarImage;
   imagePreview?: string;

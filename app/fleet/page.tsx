@@ -2,9 +2,17 @@
 import Image from "next/image";
 import { epilogue, sora } from "@/app/ui/fonts";
 import { SelectBox } from "@/app/ui/commons/SelectBox";
-import { Cars, Car as CarType } from "@/app/lib/placeholder-car";
+import {
+  Cars,
+  Car as CarType,
+  make,
+  Make,
+  category,
+  Category
+} from "@/app/lib/placeholder-car";
 import { Button } from "@/app/ui/commons/Button";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Car = (car: CarType) => {
   const router = useRouter();
@@ -65,6 +73,14 @@ const Car = (car: CarType) => {
   );
 };
 const Page = () => {
+  const [selectedMake, setSelectedMake] = useState<Make | undefined>();
+  const [selectedCategory, setSelectedCategory] = useState<
+    Category | undefined
+  >();
+
+  const filteredCars = Cars.filter(
+    car => !selectedMake || car.make === selectedMake
+  ).filter(car => !selectedCategory || car.category === selectedCategory);
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <div className={"text-center h-[400px] relative"}>
@@ -99,29 +115,24 @@ const Page = () => {
           <div className={"md:flex md:flex-row"}>
             <SelectBox
               defaultOption={"Vehicle type"}
-              options={[
-                { id: "1", name: "Sport" },
-                { id: "2", name: "SUV" },
-                { id: "4", name: "Truck" },
-                { id: "5", name: "Van" }
-              ]}
-              onSelect={() => true}
+              options={category
+                .slice()
+                .map((c, i) => ({ id: i.toString(), name: c }))}
+              onSelect={v => setSelectedCategory(v as Category)}
             />
             <SelectBox
               defaultOption={"Vehicle make"}
-              options={[
-                { id: "1", name: "BMW" },
-                { id: "2", name: "Audi" },
-                { id: "4", name: "Mercedes" },
-                { id: "5", name: "Porsche" }
-              ]}
-              onSelect={() => true}
+              options={make
+                .slice()
+                .sort()
+                .map((m, i) => ({ id: i.toString(), name: m }))}
+              onSelect={v => setSelectedMake(v as Make)}
             />
           </div>
         </div>
       </section>
       <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
-        {Cars.map(car => (
+        {filteredCars.map(car => (
           <Car key={car.id} {...car} />
         ))}
       </section>
@@ -130,7 +141,7 @@ const Page = () => {
           "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"
         }
       >
-        {Cars.map(car => (
+        {filteredCars.map(car => (
           <Car key={car.id} {...car} />
         ))}
       </section>
