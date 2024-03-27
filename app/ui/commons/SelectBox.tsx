@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { elegantIcons, inconsolata } from "@/app/ui/fonts";
 import { motion } from "framer-motion";
+import { useClickOutside } from "@/hooks/clickOutside";
 
 type Option = {
   id: string;
@@ -16,8 +17,14 @@ export const SelectBox = ({ defaultOption, options, onSelect }: Props) => {
   const [selectedOption, setSelectedOption] = useState<Option | undefined>(
     undefined
   );
+  const wrapperRef = useRef("selectBox");
+  useClickOutside(wrapperRef, () => {
+    setIsOpen(false);
+  });
+
   return (
-    <div className={"px-10"}>
+    // @ts-ignore
+    <div ref={wrapperRef} className={"px-10"}>
       <div className={"flex flex-col relative"}>
         <span
           className={`
