@@ -3,10 +3,6 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Image from "next/image";
-import car1 from "@/public/cars/1/1.jpeg";
-import car2 from "@/public/cars/1/2.jpeg";
-import car3 from "@/public/cars/1/3.jpeg";
-import car4 from "@/public/cars/1/4.jpeg";
 import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 import Link from "next/link";
 import { epilogue, sora } from "@/app/ui/fonts";
@@ -15,29 +11,8 @@ import { Button } from "@/app/ui/commons/Button";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { TextInput } from "@/app/ui/commons/textInput";
 import { DateInput } from "@/app/ui/commons/dateInput";
-
-const slides = [
-  {
-    src: car1.src,
-    width: car1.width,
-    height: car1.height
-  },
-  {
-    src: car2.src,
-    width: car2.width,
-    height: car2.height
-  },
-  {
-    src: car3.src,
-    width: car3.width,
-    height: car3.height
-  },
-  {
-    src: car4.src,
-    width: car4.width,
-    height: car4.height
-  }
-];
+import { Cars } from "@/app/lib/placeholder-car";
+import z from "zod";
 
 const StatItem = ({
   value,
@@ -109,13 +84,28 @@ const AvailableColors = ({ colors }: { colors: ReadonlyArray<string> }) => {
 
 type Props = {
   params: {
-    carId?: string;
+    carId?: number;
   };
 };
+
+const numberValid = z.coerce.number().min(0);
 const Page = ({ params }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const maybeCarId = numberValid.safeParse(params.carId);
+
+  if (!maybeCarId.success) {
+    return null;
+  }
+
+  const car = Cars[maybeCarId.data];
+
+  if (!car) {
+    return null;
+  }
+
   return (
     <>
       <main className="flex min-h-screen flex-col bg-white px-7 md:px-20">
@@ -148,7 +138,7 @@ const Page = ({ params }: Props) => {
           <section
             className={`${epilogue.className} mt-[25px] mb-[5px] text-[#0c1315] md:w-full`}
           >
-            <h4>Porche Taycan Sport 6</h4>
+            <h4>{`${car.make} ${car.name}`}</h4>
             <div className={"mb-[25px]"}>
               <Rating rating={5} maxRating={5} />
             </div>
@@ -158,20 +148,20 @@ const Page = ({ params }: Props) => {
               </h5>
               <StatItem
                 title={"0 to 100 km/h"}
-                value={"0.3"}
+                value={car["0to100"].toString()}
                 measureUnit={"s"}
               />
               <StatItem
                 title={"Top speed"}
-                value={"330"}
+                value={car.maxSpeed.toString()}
                 measureUnit={"km/h"}
               />
               <StatItem
                 title={"Engine Power"}
-                value={"670"}
+                value={car.enginePower.toString()}
                 measureUnit={"cv"}
               />
-              <AvailableColors colors={["#000", "#FFF", "#F50", "#1139bb"]} />
+              <AvailableColors colors={car.availableColors} />
             </div>
             <div className={"mt-[5px]"}>
               <Button
@@ -189,7 +179,7 @@ const Page = ({ params }: Props) => {
             <section
               className={`mt-[25px] mb-[66px] flex flex-col gap-6 md:hidden`}
             >
-              {slides.map((slide, index) => (
+              {car.gallery.map((slide, index) => (
                 <div
                   key={index}
                   className={"w-full relative"}
@@ -218,24 +208,24 @@ const Page = ({ params }: Props) => {
               >
                 <Image
                   className={"w-full"}
-                  src={slides[0].src}
+                  src={car.gallery[0].src}
                   alt={"car image"}
-                  width={slides[0].width}
-                  height={slides[0].height}
+                  width={car.gallery[0].width}
+                  height={car.gallery[0].height}
                 />
               </div>
               <div className={"flex flex-row gap-5"}>
-                {slides.slice(1).map((slide, index) => (
+                {car.gallery.slice(1).map((slide, index) => (
                   <div
                     key={index}
                     className={"w-full relative cursor-pointer"}
                     onClick={() => {
-                      setGalleryIndex(index);
+                      setGalleryIndex(index + 1);
                       setOpen(true);
                     }}
                   >
                     <Image
-                      className={"w-full"}
+                      className={"w-full h-full object-cover"}
                       src={slide.src}
                       alt={"car image"}
                       width={slide.width}
@@ -420,7 +410,7 @@ const Page = ({ params }: Props) => {
         <Lightbox
           open={open}
           close={() => setOpen(false)}
-          slides={slides}
+          slides={car.gallery}
           index={galleryIndex}
           styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
         />
