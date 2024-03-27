@@ -12,10 +12,10 @@ const Car = (car: CarType) => {
     <div key={car.id} className={"pt-8 px-8 pb-10 w-full min-h-1 bg-[#f7f5f2]"}>
       <Image
         className={"w-full"}
-        src={car.image}
+        src={car.imageList.src}
         alt={car.name}
-        width={car.width}
-        height={car.height}
+        width={car.imageList.width}
+        height={car.imageList.height}
       />
       <div
         className={`${epilogue.className} mt-9 flex flex-col justify-center text-[#0c1315]`}
@@ -41,7 +41,7 @@ const Car = (car: CarType) => {
             >
               $
             </span>
-            <span>180</span>
+            <span>{car.fromPrice}</span>
           </span>
           <span
             className={`
@@ -49,7 +49,7 @@ const Car = (car: CarType) => {
                     before:mx-1
                     `}
           >
-            hour
+            day
           </span>
         </div>
         <Button
