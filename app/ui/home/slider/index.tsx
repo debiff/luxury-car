@@ -76,7 +76,7 @@ export const Slider = () => {
         ))}
       </Swiper>
       <div
-        className={`${epilogue.className} absolute bottom-[15%] left-[5%] text-white max-w-[40%] z-40`}
+        className={`${epilogue.className} absolute bottom-[15%] left-[5%] text-white max-w-[45%] md:max-w-[40%] z-40`}
       >
         <h2>Need to Rent a Luxury Car? Send A Request</h2>
         <Button variant={"primary"}>SEND</Button>
