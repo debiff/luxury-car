@@ -15,12 +15,13 @@ export const CallUs = () => {
       </div>
       <div className={"my-3.5 md:w-1/2 md:my-0"}>
         <div className={"md:pl-[14.5%]"}>
-          <p className={"text-[#a6a6a6] mt-[10px] mb-[20px]"}>
-            Vivamus arcu felis bibendum ut tristique et egestas. Ultricies leo
-            intege in malesuada nunc vel risus commodo. Sapien nec sagittis
-            aliquam male bibendum arcu vitae. In ornare quam viverra orci
-            sagittis eu volutpat odio facilisis. Fringilla est ullamcorper eget
-            nulla facilisi nul.
+          <p className={"text-[#a6a6a6] mt-[10px] "}>
+            Indulge in unparalleled luxury travel with our exquisite fleet. From
+            executive sedans to spacious SUVs, we provide top-notch comfort and
+            style for every journey.
+          </p>
+          <p className={"text-[#a6a6a6] mb-[20px]"}>
+            Write us now for the ultimate travel experience.
           </p>
           <div className={` flex items-center`}>
             <div className={"mr-[19px]"}>

@@ -17,39 +17,57 @@ type Review = {
 const reviews: ReadonlyArray<Review> = [
   {
     id: "1",
-    title: "Clean & Comfortable",
+    title: "Top-notch Luxury Ride",
     description:
-      "Habitant morbi tristique senectus et du amon ut venenatis tellus in metus vulpute ate augue interdum velit euismod in pel lent sque mauris pharetra et ultrices neq ue te amet cursus sit amet dictum sit ami justo arcu dictu.",
-    author: "Gloria Foles",
-    location: "Chicago ",
-    rating: 4.5
+      "From start to finish, this rental service offers unmatched luxury. Clean, stylish interiors and a smooth ride make it a must-try.",
+    author: "Luca Visentin",
+    location: "Padova",
+    rating: 5
   },
   {
     id: "2",
-    title: "Best Price Assured",
+    title: "Elegant Wheels",
     description:
-      "Pretium fusce id velit ut consectetur ada pisa ing elit pellentesque habitant morbi tristiqe senectus.",
-    author: "Madison Edwar",
-    location: "New York",
+      "Experience sophistication and convenience with their modern fleet, combining style and functionality seamlessly.",
+    author: "Sofia Müller",
+    location: "Berlin",
     rating: 5
   },
   {
     id: "3",
-    title: "Smooth Car Transport",
+    title: "Consistently Excellent",
     description:
-      "In hac habitasse platea dictu imst vesti ulumon rhoncus est pellentesqu ini ultriceso in iaculis nunc sed augue lac imperdiet dui accumsan sit a.",
-    author: "Eloin Malone",
-    location: "Auburn ",
+      "This rental service consistently goes above and beyond, from customer service to vehicle quality. Highly recommended.",
+    author: "Ahmed Al-Mansoori",
+    location: "Dubai",
     rating: 5
   },
   {
-    id: "1",
-    title: "Clean & Comfortable",
+    id: "4",
+    title: "Luxury Redefined",
     description:
-      "Habitant morbi tristique senectus et du amon ut venenatis tellus in metus vulpute ate augue interdum velit euismod in pel lent sque mauris pharetra et ultrices neq ue te amet cursus sit amet dictum sit ami justo arcu dictu.",
-    author: "Gloria Foles",
-    location: "Chicago ",
+      "Indulge in unparalleled luxury with attention to detail in service and vehicle selection.",
+    author: "Maria Garcia",
+    location: "Madrid",
+    rating: 5
+  },
+  {
+    id: "5",
+    title: "Elegant and Powerful Rides",
+    description:
+      "Enjoy elegance and performance with their impressive high-performance vehicles.",
+    author: "Emily Johnson",
+    location: "New York City",
     rating: 4.5
+  },
+  {
+    id: "6",
+    title: "Luxury Travel at Its Best",
+    description:
+      "Elevate your journey with seamless booking and first-class amenities for the ultimate luxury experience.",
+    author: "Michael Thompson",
+    location: "London",
+    rating: 5
   }
 ];
 
@@ -101,9 +119,9 @@ export const Reviews = () => {
         <h1
           className={`${epilogue.className} text-white text-[40px] md:text-[50px]`}
         >
-          {"We trive to meet the needs"} <br />
-          {"of our clients and we value their"} <br />
-          {"opinions about our work "}
+          {"We meet our clients' needs"} <br />
+          {"and value their opinions"} <br />
+          {"about our work. "}
         </h1>
       </div>
       <div className={"hidden md:block"}>

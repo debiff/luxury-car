@@ -13,35 +13,35 @@ import { Button } from "@/app/ui/commons/Button";
 const slides = [
   {
     id: 1,
-    src: "/huracan-bg.jpeg",
+    src: "/slider/3.webp",
     width: 1920,
-    height: 900,
+    height: 1080,
     alt: "huracan",
-    customClassName: "left-[-450px]"
+    customClassName: "left-[-150px] "
   },
   {
     id: 2,
-    src: "/ferrari-bg.jpeg",
-    width: 1920,
-    height: 1080,
+    src: "/slider/1.webp",
+    width: 1350,
+    height: 900,
     alt: "ferrari",
-    customClassName: "left-[-405px]"
+    customClassName: "left-[-450px] md:w-full"
   },
   {
     id: 3,
-    src: "/urus-bg.jpeg",
+    src: "/slider/4.webp",
     width: 1920,
     height: 1080,
-    alt: "urus",
-    customClassName: "left-[-425px] "
+    alt: "range sport",
+    customClassName: "left-[-700px]"
   },
   {
     id: 4,
-    src: "/g63-bg.jpeg",
+    src: "/slider/2.webp",
     width: 1920,
-    height: 1065,
+    height: 1080,
     alt: "g63",
-    customClassName: "left-[-415px]"
+    customClassName: "left-[-350px]"
   }
 ];
 export const Slider = () => {
@@ -76,10 +76,11 @@ export const Slider = () => {
         ))}
       </Swiper>
       <div
-        className={`${epilogue.className} absolute bottom-[15%] left-[5%] text-white max-w-[45%] md:max-w-[40%] z-40`}
+        className={`${epilogue.className} absolute bottom-[15%] md:bottom-[5%] left-[5%] text-white max-w-[45%] md:max-w-[40%] z-40`}
       >
-        <h2>Need to Rent a Luxury Car? Send A Request</h2>
-        <Button variant={"primary"}>SEND</Button>
+        <h2>Elevate Your Journey.</h2>
+        <h2>Rent Luxury Today.</h2>
+        <Button variant={"primary"}>BOOK</Button>
       </div>
     </div>
   );

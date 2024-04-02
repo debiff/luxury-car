@@ -1,10 +1,75 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
-import { Rating } from "@/app/ui/commons/rating";
-import { Cars, Car } from "@/app/lib/placeholder-car";
+import { Category, category } from "@/app/lib/placeholder-car";
 
-const Car = (car: Car) => {
+const CategoryContentMap = new Map<
+  Category,
+  { label: string; image: string; description: string; fromPrice: string }
+>([
+  [
+    "Luxury",
+    {
+      label: "Luxury",
+      image: "/preview/luxury.webp",
+      description:
+        "Indulge in opulence and prestige. Elevate your journey with unmatched comfort, style, and performance.",
+      fromPrice: "180"
+    }
+  ],
+  [
+    "Sport",
+    {
+      label: "Sport",
+      image: "/preview/sport.webp",
+      description:
+        "Experience the thrill of precision engineering and dynamic performance. Embrace the road with unparalleled agility and power.",
+      fromPrice: "180"
+    }
+  ],
+  [
+    "Suv",
+    {
+      label: "SUV",
+      image: "/preview/suv.webp",
+      description:
+        "Conquer any terrain in comfort and style. Versatile, spacious, and ready for adventure wherever you roam.",
+      fromPrice: "180"
+    }
+  ],
+  [
+    "Van",
+    {
+      label: "Luxury Van",
+      image: "/preview/van.webp",
+      description:
+        "Effortless versatility meets unparalleled comfort. Travel in spacious luxury, whether for business or pleasure.",
+      fromPrice: "180"
+    }
+  ],
+  [
+    "Executive",
+    {
+      label: "Executive",
+      image: "/preview/executive.webp",
+      description:
+        "Sleek sophistication meets unparalleled comfort. Experience the pinnacle of luxury and refinement on every drive.",
+      fromPrice: "180"
+    }
+  ],
+  [
+    "Supercar",
+    {
+      label: "Supercars",
+      image: "/preview/supercar.webp",
+      description:
+        "Unleash adrenaline with breathtaking speed and unparalleled engineering. Elevate every moment with unmatched performance.",
+      fromPrice: "180"
+    }
+  ]
+]);
+
+const CategoryBox = ({ category }: { category: Category }) => {
   const backgroundMotion = {
     rest: { opacity: 0, ease: "easeOut", duration: 0.4, type: "tween" },
     hover: {
@@ -37,14 +102,6 @@ const Car = (car: Car) => {
     }
   };
 
-  const categoryMotion = {
-    ...textMotion,
-    hover: {
-      ...textMotion.hover,
-      delay: 0.1
-    }
-  };
-
   const priceMotion = {
     ...textMotion,
     hover: {
@@ -61,18 +118,22 @@ const Car = (car: Car) => {
     }
   };
 
+  const categoryContent = CategoryContentMap.get(category);
+  if (!categoryContent) {
+    return null;
+  }
+
   return (
-    <div key={car.id} className={"mb-14 md:mb-auto"}>
+    <div className={"mb-14 md:mb-auto"}>
       <a href={"#"}>
         <div className={"relative"}>
-          {car.imagePreview && (
-            <Image
-              src={car.imagePreview}
-              alt={car.name}
-              width={800}
-              height={1027}
-            />
-          )}
+          <Image
+            src={categoryContent.image}
+            alt={category}
+            width={800}
+            height={1027}
+          />
+
           <motion.div initial="rest" whileHover="hover" animate="rest">
             <motion.div
               className="
@@ -94,12 +155,6 @@ const Car = (car: Car) => {
                 "
               variants={backgroundMotion}
             >
-              <motion.h4
-                className={`${epilogue.className} text-white`}
-                variants={categoryMotion}
-              >
-                {car.category}
-              </motion.h4>
               <motion.div
                 className={`${sora.className} flex items-end`}
                 variants={priceMotion}
@@ -130,7 +185,7 @@ const Car = (car: Car) => {
                   >
                     $
                   </span>
-                  <span>180</span>
+                  <span>{categoryContent.fromPrice}</span>
                 </span>
                 <span
                   className={`
@@ -149,7 +204,7 @@ const Car = (car: Car) => {
                       text-[#a6a6a6]
                     `}
               >
-                {car.descriptionShort}
+                {categoryContent.description}
               </motion.div>
             </motion.div>
           </motion.div>
@@ -157,15 +212,15 @@ const Car = (car: Car) => {
       </a>
       <div className={`${epilogue.className} mt-8 flex flex-col items-center`}>
         <a href={"#"}>
-          <h5 className={"text-white"}>{car.name}</h5>
+          <h5 className={"text-white"}>{category}</h5>
         </a>
-        <Rating rating={5} maxRating={5} />
       </div>
     </div>
   );
 };
 
 export const CarPreview = () => {
+  const orderedCategories = category.slice().sort();
   return (
     <section
       className={
@@ -173,13 +228,13 @@ export const CarPreview = () => {
       }
     >
       <div className="hidden md:grid grid-cols-3 gap-x-7 gap-y-16">
-        {Cars.filter(c => c.previewCar === true).map(car => (
-          <Car key={car.id} {...car} />
+        {orderedCategories.map((category, id) => (
+          <CategoryBox key={id} category={category} />
         ))}
       </div>
       <div className={"md:hidden flex flex-col"}>
-        {Cars.filter(c => c.previewCar === true).map(car => (
-          <Car key={car.id} {...car} />
+        {orderedCategories.map((category, id) => (
+          <CategoryBox key={id} category={category} />
         ))}
       </div>
     </section>

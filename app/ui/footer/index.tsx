@@ -24,7 +24,7 @@ export const Footer = () => {
                   className={`${sora.className} text-[#a6a6a6] text-base leading-7 `}
                 >
                   {
-                    " Justo odio dignissimos ducimus qui blanditiis voluptatum deleniti corrupti quos dolores et quas molestias sint occaecati id est laborumesa etdolorum."
+                    " Crafting unforgettable journeys with unparalleled luxury and comfort. Elevating travel experiences to new heights of sophistication and style."
                   }
                 </span>
               </div>

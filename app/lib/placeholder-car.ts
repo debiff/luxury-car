@@ -25,7 +25,14 @@ export const make = [
   "BMW"
 ] as const;
 export type Make = (typeof make)[number];
-export const category = ["Luxury", "Sport", "SUV", "Truck", "Van"] as const;
+export const category = [
+  "Luxury",
+  "Sport",
+  "Suv",
+  "Supercar",
+  "Van",
+  "Executive"
+] as const;
 export type Category = (typeof category)[number];
 export type Car = {
   id: number;
@@ -33,14 +40,12 @@ export type Car = {
   category: Category;
   make: Make;
   imageList: CarImage;
-  imagePreview?: string;
   fromPrice: number;
   "0to100": number;
   maxSpeed: number;
   enginePower: number;
   availableColors: ReadonlyArray<string>;
   descriptionShort: string;
-  previewCar?: boolean;
   gallery: Array<CarImage>;
 };
 
@@ -50,7 +55,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Panamera",
     category: "Luxury",
     make: "Porsche",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car1_list.src,
       width: car1_list.width,
@@ -63,7 +67,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -76,7 +79,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "SL 63",
     category: "Luxury",
     make: "Mercedes",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car2_list.src,
       width: car2_list.width,
@@ -89,7 +91,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -102,7 +103,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "G 4x4 63",
     category: "Luxury",
     make: "Mercedes",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car3_list.src,
       width: car3_list.width,
@@ -115,7 +115,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -128,7 +127,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "G 63",
     category: "Luxury",
     make: "Mercedes",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car3_list.src,
       width: car3_list.width,
@@ -141,7 +139,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -154,7 +151,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "V Class",
     category: "Luxury",
     make: "Mercedes",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car4_list.src,
       width: car4_list.width,
@@ -167,7 +163,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -180,7 +175,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Range Rover Sport",
     category: "Luxury",
     make: "Land Rover",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car5_list.src,
       width: car5_list.width,
@@ -193,7 +187,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -206,7 +199,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Range Rover Defender",
     category: "Luxury",
     make: "Land Rover",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car6_list.src,
       width: car6_list.width,
@@ -219,7 +211,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -232,7 +223,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Q7",
     category: "Luxury",
     make: "Audi",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car7_list.src,
       width: car7_list.width,
@@ -245,7 +235,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -258,7 +247,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Portofino",
     category: "Luxury",
     make: "Ferrari",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car8_list.src,
       width: car8_list.width,
@@ -271,7 +259,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -284,7 +271,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "Huracán Evo Spyder",
     category: "Luxury",
     make: "Lamborghini",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car9_list.src,
       width: car9_list.width,
@@ -297,7 +283,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -310,7 +295,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "4S Cabriolet",
     category: "Luxury",
     make: "Porsche",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car10_list.src,
       width: car10_list.width,
@@ -323,7 +307,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -336,7 +319,6 @@ export const Cars: ReadonlyArray<Car> = [
     name: "4 Series",
     category: "Luxury",
     make: "BMW",
-    imagePreview: "/cars/1/preview.webp",
     imageList: {
       src: car11_list.src,
       width: car11_list.width,
@@ -349,7 +331,6 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    previewCar: true,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
