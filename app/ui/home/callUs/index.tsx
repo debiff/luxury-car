@@ -25,7 +25,12 @@ export const CallUs = () => {
           </p>
           <div className={` flex items-center`}>
             <div className={"mr-[19px]"}>
-              <Image src={"/call.png"} width={45} height={50} alt={"call-us"} />
+              <Image
+                src={"/home/callUs/call.png"}
+                width={45}
+                height={50}
+                alt={"call-us"}
+              />
             </div>
             <a
               href="https://wa.me/00393312136784"
