@@ -8,11 +8,10 @@ import Link from "next/link";
 import { epilogue, sora } from "@/app/ui/fonts";
 import { Rating } from "@/app/ui/commons/rating";
 import { Button } from "@/app/ui/commons/Button";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
-import { TextInput } from "@/app/ui/commons/textInput";
-import { DateInput } from "@/app/ui/commons/dateInput";
+import { CheckIcon } from "@heroicons/react/20/solid";
 import { Cars } from "@/app/lib/placeholder-car";
 import z from "zod";
+import { BookModalContent } from "@/app/ui/commons/bookModalContent";
 
 const StatItem = ({
   value,
@@ -416,61 +415,7 @@ const Page = ({ params }: Props) => {
         />
       </main>
       {isModalOpen && (
-        <>
-          <div
-            className={
-              "fixed h-full w-full bg-black top-0 left-0 opacity-40 z-50"
-            }
-          ></div>
-          <div
-            className={`
-              fixed 
-              bg-[#0c1315] 
-              w-[86%] 
-              md:w-[40%]
-              max-h-[calc(100%-60px)] 
-              p-[30px] 
-              overflow-y-scroll
-              top-1/2
-              left-1/2
-              h-full
-              z-[100]
-              translate-x-[-50%]
-              translate-y-[-50%]
-            `}
-          >
-            <div
-              className={`
-              absolute
-              top-0
-              right-0
-              w-[47px]
-              h-[47px]
-              bg-[#0c1315]
-              text-white
-              cursor-pointer
-              flex
-              items-center
-              justify-center
-            `}
-              onClick={() => setIsModalOpen(false)}
-            >
-              <XMarkIcon width={"24px"} />
-            </div>
-            <div className={"flex flex-col md:justify-center md:items-center"}>
-              <TextInput placeholder={"Name"} />
-              <TextInput placeholder={"Email"} />
-              <TextInput placeholder={"Phone"} />
-              <TextInput placeholder={"Pick up location"} />
-              <DateInput placeholder={"Pick up date"} />
-              <TextInput placeholder={"Drop off location"} />
-              <DateInput placeholder={"Drop off date"} />
-              <div className={"md:w-1/2"}>
-                <Button variant={"modal"}>BOOK NOW</Button>
-              </div>
-            </div>
-          </div>
-        </>
+        <BookModalContent setIsModalOpen={setIsModalOpen} carId={car.id} />
       )}
     </>
   );
