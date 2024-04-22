@@ -11,8 +11,8 @@ import {
   Category
 } from "@/app/lib/placeholder-car";
 import { Button } from "@/app/ui/commons/Button";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Car = (car: CarType) => {
   const router = useRouter();
@@ -72,15 +72,31 @@ const Car = (car: CarType) => {
     </div>
   );
 };
+
+const allCarCategories = { id: "all", name: "Vehicle type" };
 const Page = () => {
   const [selectedMake, setSelectedMake] = useState<Make | undefined>();
   const [selectedCategory, setSelectedCategory] = useState<
     Category | undefined
   >();
+  const searchParams = useSearchParams();
+  const searchCategory = searchParams.get("category");
+
+  useEffect(() => {
+    if (
+      searchCategory &&
+      category.filter(c => c === searchCategory).length > 0
+    ) {
+      setSelectedCategory(searchCategory as Category);
+    }
+  }, [searchCategory]);
 
   const filteredCars = Cars.filter(
     car => !selectedMake || car.make === selectedMake
   ).filter(car => !selectedCategory || car.category === selectedCategory);
+
+  console.log(selectedCategory);
+  console.log(filteredCars);
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <div className={"text-center h-[400px] relative"}>
@@ -114,11 +130,18 @@ const Page = () => {
           </div>
           <div className={"md:flex md:flex-row"}>
             <SelectBox
-              defaultOption={"Vehicle type"}
-              options={category
-                .slice()
-                .map((c, i) => ({ id: i.toString(), name: c }))}
-              onSelect={v => setSelectedCategory(v as Category)}
+              defaultOption={selectedCategory ?? "Vehicle type"}
+              options={[
+                allCarCategories,
+                ...category
+                  .slice()
+                  .map((c, i) => ({ id: i.toString(), name: c }))
+              ]}
+              onSelect={v =>
+                setSelectedCategory(
+                  v === allCarCategories.name ? undefined : (v as Category)
+                )
+              }
             />
             <SelectBox
               defaultOption={"Vehicle make"}

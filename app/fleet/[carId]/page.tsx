@@ -206,7 +206,7 @@ const Page = ({ params }: Props) => {
                 }}
               >
                 <Image
-                  className={"w-full"}
+                  className={"w-full max-h-[750px] object-cover"}
                   src={car.gallery[0].src}
                   alt={"car image"}
                   width={car.gallery[0].width}
@@ -217,7 +217,7 @@ const Page = ({ params }: Props) => {
                 {car.gallery.slice(1).map((slide, index) => (
                   <div
                     key={index}
-                    className={"w-full relative cursor-pointer"}
+                    className={"w-full relative cursor-pointer max-h-[200px]"}
                     onClick={() => {
                       setGalleryIndex(index + 1);
                       setOpen(true);
@@ -240,16 +240,22 @@ const Page = ({ params }: Props) => {
               >
                 Car overview
               </h2>
-              <p className={`${sora.className} my-2.5 text-[#404040]`}>
-                {
-                  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo laborum consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla est pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id."
-                }
-              </p>
-              <p className={`${sora.className} my-2.5 text-[#404040]`}>
-                {
-                  "Sagittis molestie magnis etiam nullam tincidunt hendrerit enim ultricies phasellus, laoreet nascetur ornare torquent ultrices sapien sodales volutpat duis, accumsan ridiculus magna dictum cras gravida leo mus ex."
-                }
-              </p>
+              {car.description ? (
+                car.description
+              ) : (
+                <>
+                  <p className={`${sora.className} my-2.5 text-[#404040]`}>
+                    {
+                      "Discover the epitome of luxury and performance with the Mercedes SL 63. This iconic roadster seamlessly blends breathtaking design with formidable power under the hood. Crafted with precision and finesse, the SL 63 boasts a sleek exterior that commands attention on every street. Its potent engine delivers an exhilarating driving experience, effortlessly merging performance and comfort. "
+                    }
+                  </p>
+                  <p className={`${sora.className} my-2.5 text-[#404040]`}>
+                    {
+                      "Step inside the opulent cabin, where cutting-edge technology meets unparalleled elegance, providing a sanctuary for drivers who demand nothing but the best. Elevate your driving experience with the Mercedes SL 63."
+                    }
+                  </p>
+                </>
+              )}
             </section>
             <section className={"mb-[50px]"}>
               <h2

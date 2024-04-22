@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
 import { Category, category } from "@/app/lib/placeholder-car";
+import Link from "next/link";
 
 const CategoryContentMap = new Map<
   Category,
@@ -125,7 +126,7 @@ const CategoryBox = ({ category }: { category: Category }) => {
 
   return (
     <div className={"mb-14 md:mb-auto"}>
-      <a href={"#"}>
+      <Link href={`/fleet?category=${category}`}>
         <div className={"relative"}>
           <Image
             src={categoryContent.image}
@@ -209,7 +210,7 @@ const CategoryBox = ({ category }: { category: Category }) => {
             </motion.div>
           </motion.div>
         </div>
-      </a>
+      </Link>
       <div className={`${epilogue.className} mt-8 flex flex-col items-center`}>
         <a href={"#"}>
           <h5 className={"text-white"}>{category}</h5>
