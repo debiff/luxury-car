@@ -23,6 +23,26 @@ import car6_1 from "@/public/cars/6/1.webp";
 import car6_2 from "@/public/cars/6/2.webp";
 import car6_3 from "@/public/cars/6/3.webp";
 import car6_4 from "@/public/cars/6/4.webp";
+import car7_1 from "@/public/cars/7/1.webp";
+import car7_2 from "@/public/cars/7/2.webp";
+import car7_3 from "@/public/cars/7/3.webp";
+import car7_4 from "@/public/cars/7/4.webp";
+import car8_1 from "@/public/cars/8/1.webp";
+import car8_2 from "@/public/cars/8/2.webp";
+import car8_3 from "@/public/cars/8/3.webp";
+import car8_4 from "@/public/cars/8/4.webp";
+import car9_1 from "@/public/cars/9/1.webp";
+import car9_2 from "@/public/cars/9/2.webp";
+import car9_3 from "@/public/cars/9/3.webp";
+import car9_4 from "@/public/cars/9/4.webp";
+import car10_1 from "@/public/cars/10/1.webp";
+import car10_2 from "@/public/cars/10/2.webp";
+import car10_3 from "@/public/cars/10/3.webp";
+import car10_4 from "@/public/cars/10/4.webp";
+import car11_1 from "@/public/cars/11/1.webp";
+import car11_2 from "@/public/cars/11/2.webp";
+import car11_3 from "@/public/cars/11/3.webp";
+import car11_4 from "@/public/cars/11/4.webp";
 import car2_list from "@/public/cars/2.png";
 import car3_list from "@/public/cars/3.png";
 import car4_list from "@/public/cars/4.png";
@@ -261,10 +281,10 @@ export const Cars: ReadonlyArray<Car> = [
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
+      { src: car7_1.src, width: car7_1.width, height: car7_1.height },
+      { src: car7_2.src, width: car7_2.width, height: car7_2.height },
+      { src: car7_3.src, width: car7_3.width, height: car7_3.height },
+      { src: car7_4.src, width: car7_4.width, height: car7_4.height }
     ]
   },
   {
@@ -285,10 +305,10 @@ export const Cars: ReadonlyArray<Car> = [
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
+      { src: car8_1.src, width: car8_1.width, height: car8_1.height },
+      { src: car8_2.src, width: car8_2.width, height: car8_2.height },
+      { src: car8_3.src, width: car8_3.width, height: car8_3.height },
+      { src: car8_4.src, width: car8_4.width, height: car8_4.height }
     ]
   },
   {
@@ -309,15 +329,15 @@ export const Cars: ReadonlyArray<Car> = [
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
+      { src: car9_1.src, width: car9_1.width, height: car9_1.height },
+      { src: car9_2.src, width: car9_2.width, height: car9_2.height },
+      { src: car9_3.src, width: car9_3.width, height: car9_3.height },
+      { src: car9_4.src, width: car9_4.width, height: car9_4.height }
     ]
   },
   {
     id: 10,
-    name: "4S Cabriolet",
+    name: "992 4S Cabriolet",
     make: "Porsche",
     category: "Luxury",
     imageList: {
@@ -333,10 +353,10 @@ export const Cars: ReadonlyArray<Car> = [
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
+      { src: car10_1.src, width: car10_1.width, height: car10_1.height },
+      { src: car10_2.src, width: car10_2.width, height: car10_2.height },
+      { src: car10_3.src, width: car10_3.width, height: car10_3.height },
+      { src: car10_4.src, width: car10_4.width, height: car10_4.height }
     ]
   },
   {
@@ -357,10 +377,10 @@ export const Cars: ReadonlyArray<Car> = [
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
+      { src: car11_1.src, width: car11_1.width, height: car11_1.height },
+      { src: car11_2.src, width: car11_2.width, height: car11_2.height },
+      { src: car11_3.src, width: car11_3.width, height: car11_3.height },
+      { src: car11_4.src, width: car11_4.width, height: car11_4.height }
     ]
   }
 ];
