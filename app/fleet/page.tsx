@@ -106,7 +106,7 @@ const Page = () => {
           alt={"fleet header image"}
         />
         <div className={"h-full flex flex-col justify-center"}>
-          <div className={"z-50"}>
+          <div className={"z-30"}>
             <h1 className={`${epilogue.className} text-white text-[40px]`}>
               Our fleet
             </h1>
