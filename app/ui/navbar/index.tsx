@@ -64,11 +64,11 @@ export const Navbar = () => {
         }
       )}
     >
-      <Link href={"/"} className={"z-100"}>
+      <Link href={"/"} className={"z-[100]"}>
         <Image width="121" height="12" src="/logo.png" alt="logo main" />
       </Link>
 
-      <MenuItems className={"hidden md:block"} />
+      <MenuItems className={"hidden md:block"} setIsMenuOpen={setIsMenuOpen} />
       <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)} />
       <motion.nav
         className={`fixed
@@ -91,7 +91,7 @@ export const Navbar = () => {
         variants={variants}
         transition={{ duration: 0.5 }}
       >
-        <MenuItems />
+        <MenuItems setIsMenuOpen={setIsMenuOpen} />
       </motion.nav>
     </header>
   );
