@@ -7,7 +7,6 @@ import { inconsolata } from "@/app/ui/fonts";
 import { MenuButton } from "@/app/ui/navbar/MenuButton";
 import { MenuItems } from "@/app/ui/navbar/MenuItems";
 import { motion } from "framer-motion";
-import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
