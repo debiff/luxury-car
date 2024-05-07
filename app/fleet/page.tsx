@@ -101,7 +101,7 @@ const Page = () => {
     <main className="flex min-h-screen flex-col bg-white">
       <div className={"text-center h-[400px] relative"}>
         <Image
-          src="/fleet-header.jpeg"
+          src="/fleet-header.webp"
           fill
           objectFit="cover"
           quality={100}

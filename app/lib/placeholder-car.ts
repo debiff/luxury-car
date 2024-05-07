@@ -1,8 +1,7 @@
-import car1_1 from "@/public/cars/1/1.jpeg";
-import car1_2 from "@/public/cars/1/2.jpeg";
+import car1_1 from "@/public/cars/1/1.webp";
+import car1_2 from "@/public/cars/1/2.webp";
 import car1_3 from "@/public/cars/1/3.webp";
-import car1_4 from "@/public/cars/1/4.jpeg";
-import car1_list from "@/public/cars/1.png";
+import car1_4 from "@/public/cars/1/4.webp";
 import car2_1 from "@/public/cars/2/1.webp";
 import car2_2 from "@/public/cars/2/2.webp";
 import car2_3 from "@/public/cars/2/3.webp";
@@ -43,16 +42,22 @@ import car11_1 from "@/public/cars/11/1.webp";
 import car11_2 from "@/public/cars/11/2.webp";
 import car11_3 from "@/public/cars/11/3.webp";
 import car11_4 from "@/public/cars/11/4.webp";
+import car12_1 from "@/public/cars/12/1.webp";
+import car12_2 from "@/public/cars/12/2.webp";
+import car12_3 from "@/public/cars/12/3.webp";
+import car12_4 from "@/public/cars/12/4.webp";
+import car1_list from "@/public/cars/1.png";
 import car2_list from "@/public/cars/2.png";
 import car3_list from "@/public/cars/3.png";
-import car4_list from "@/public/cars/4.png";
-import car5_list from "@/public/cars/5.png";
-import car6_list from "@/public/cars/6.png";
-import car7_list from "@/public/cars/7.png";
+import car4_list from "@/public/cars/5.png";
+import car5_list from "@/public/cars/6.png";
+import car6_list from "@/public/cars/7.png";
+import car7_list from "@/public/cars/8.png";
 import car8_list from "@/public/cars/8.png";
 import car9_list from "@/public/cars/9.png";
 import car10_list from "@/public/cars/10.png";
 import car11_list from "@/public/cars/11.png";
+import car12_list from "@/public/cars/12.png";
 import React from "react";
 import { Description } from "@/public/cars/2/description";
 
@@ -94,7 +99,7 @@ export type Car = {
 
 export const Cars: ReadonlyArray<Car> = [
   {
-    id: 0,
+    id: 1,
     name: "Panamera",
     make: "Porsche",
     category: "Luxury",
@@ -118,7 +123,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 1,
+    id: 2,
     name: "SL 63",
     make: "Mercedes",
     category: "Luxury",
@@ -144,7 +149,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     name: "G 4x4 63",
     make: "Mercedes",
     category: "Luxury",
@@ -168,14 +173,14 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     name: "G 63",
     make: "Mercedes",
     category: "Luxury",
     imageList: {
-      src: car3_list.src,
-      width: car3_list.width,
-      height: car3_list.height
+      src: car4_list.src,
+      width: car4_list.width,
+      height: car4_list.height
     },
     fromPrice: 500,
     "0to100": 5.3,
@@ -192,14 +197,14 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     name: "V Class",
     make: "Mercedes",
     category: "Luxury",
     imageList: {
-      src: car4_list.src,
-      width: car4_list.width,
-      height: car4_list.height
+      src: car5_list.src,
+      width: car5_list.width,
+      height: car5_list.height
     },
     fromPrice: 500,
     "0to100": 5.3,
@@ -216,14 +221,14 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     name: "Range Rover Sport",
     make: "Land Rover",
     category: "Luxury",
     imageList: {
-      src: car5_list.src,
-      width: car5_list.width,
-      height: car5_list.height
+      src: car6_list.src,
+      width: car6_list.width,
+      height: car6_list.height
     },
     fromPrice: 500,
     "0to100": 5.3,
@@ -240,33 +245,9 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     name: "Range Rover Defender",
     make: "Land Rover",
-    category: "Luxury",
-    imageList: {
-      src: car6_list.src,
-      width: car6_list.width,
-      height: car6_list.height
-    },
-    fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
-    availableColors: ["#000000"],
-    descriptionShort:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    gallery: [
-      { src: car1_1.src, width: car1_1.width, height: car1_1.height },
-      { src: car1_2.src, width: car1_2.width, height: car1_2.height },
-      { src: car1_3.src, width: car1_3.width, height: car1_3.height },
-      { src: car1_4.src, width: car1_4.width, height: car1_4.height }
-    ]
-  },
-  {
-    id: 7,
-    name: "Q7",
-    make: "Audi",
     category: "Luxury",
     imageList: {
       src: car7_list.src,
@@ -289,8 +270,8 @@ export const Cars: ReadonlyArray<Car> = [
   },
   {
     id: 8,
-    name: "Portofino",
-    make: "Ferrari",
+    name: "Q7",
+    make: "Audi",
     category: "Luxury",
     imageList: {
       src: car8_list.src,
@@ -313,8 +294,8 @@ export const Cars: ReadonlyArray<Car> = [
   },
   {
     id: 9,
-    name: "Huracán Evo Spyder",
-    make: "Lamborghini",
+    name: "Portofino",
+    make: "Ferrari",
     category: "Luxury",
     imageList: {
       src: car9_list.src,
@@ -337,8 +318,8 @@ export const Cars: ReadonlyArray<Car> = [
   },
   {
     id: 10,
-    name: "992 4S Cabriolet",
-    make: "Porsche",
+    name: "Huracán Evo Spyder",
+    make: "Lamborghini",
     category: "Luxury",
     imageList: {
       src: car10_list.src,
@@ -361,8 +342,8 @@ export const Cars: ReadonlyArray<Car> = [
   },
   {
     id: 11,
-    name: "4 Series",
-    make: "BMW",
+    name: "992 4S Cabriolet",
+    make: "Porsche",
     category: "Luxury",
     imageList: {
       src: car11_list.src,
@@ -381,6 +362,30 @@ export const Cars: ReadonlyArray<Car> = [
       { src: car11_2.src, width: car11_2.width, height: car11_2.height },
       { src: car11_3.src, width: car11_3.width, height: car11_3.height },
       { src: car11_4.src, width: car11_4.width, height: car11_4.height }
+    ]
+  },
+  {
+    id: 12,
+    name: "4 Series",
+    make: "BMW",
+    category: "Luxury",
+    imageList: {
+      src: car12_list.src,
+      width: car12_list.width,
+      height: car12_list.height
+    },
+    fromPrice: 500,
+    "0to100": 5.3,
+    maxSpeed: 272,
+    enginePower: 353,
+    availableColors: ["#000000"],
+    descriptionShort:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    gallery: [
+      { src: car12_1.src, width: car12_1.width, height: car12_1.height },
+      { src: car12_2.src, width: car12_2.width, height: car12_2.height },
+      { src: car12_3.src, width: car12_3.width, height: car12_3.height },
+      { src: car12_4.src, width: car12_4.width, height: car12_4.height }
     ]
   }
 ];

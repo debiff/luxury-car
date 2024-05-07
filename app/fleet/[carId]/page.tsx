@@ -87,7 +87,7 @@ type Props = {
   };
 };
 
-const numberValid = z.coerce.number().min(0);
+const numberValid = z.coerce.number().min(1);
 const Page = ({ params }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
@@ -99,7 +99,7 @@ const Page = ({ params }: Props) => {
     return null;
   }
 
-  const car = Cars[maybeCarId.data];
+  const car = Cars[maybeCarId.data - 1];
 
   if (!car) {
     return null;
