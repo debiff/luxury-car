@@ -6,7 +6,7 @@ import Link from "next/link";
 
 type Props = {
   className?: string;
-  setIsMenuOpen: (_: boolean) => void;
+  setIsMenuOpen?: (_: boolean) => void;
 };
 
 type MenuItemProps = Pick<Props, "setIsMenuOpen"> & {
@@ -23,7 +23,11 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     <Link
       className={`${styles.item}`}
       href={url}
-      onClick={() => setIsMenuOpen(false)}
+      onClick={() => {
+        if (setIsMenuOpen) {
+          setIsMenuOpen(false);
+        }
+      }}
     >
       <div
         className={`translate-x-0 duration-700 ease-in-out group-hover:translate-x-4`}
