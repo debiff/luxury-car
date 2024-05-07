@@ -95,8 +95,6 @@ const Page = () => {
     car => !selectedMake || car.make === selectedMake
   ).filter(car => !selectedCategory || car.category === selectedCategory);
 
-  console.log(selectedCategory);
-  console.log(filteredCars);
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <div className={"text-center h-[400px] relative"}>

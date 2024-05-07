@@ -2,27 +2,36 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { inconsolata } from "@/app/ui/fonts";
 import { MenuButton } from "@/app/ui/navbar/MenuButton";
 import { MenuItems } from "@/app/ui/navbar/MenuItems";
 import { motion } from "framer-motion";
 import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
-  const [transparentBackground, setTransparentBackground] = useState(true);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [transparentBackground, setTransparentBackground] = useState(isHome);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const changeNavButton = () => {
+
+  const changeNavButton = useCallback(() => {
     if (window.scrollY >= 30) {
       setTransparentBackground(false);
     } else {
       setTransparentBackground(true);
     }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavButton);
   }, []);
+  useEffect(() => {
+    if (isHome) {
+      window.addEventListener("scroll", changeNavButton);
+    } else {
+      setTransparentBackground(false);
+      window.removeEventListener("scroll", changeNavButton);
+    }
+  }, [isHome]);
 
   const variants = {
     open: { opacity: 1, y: 0 },
