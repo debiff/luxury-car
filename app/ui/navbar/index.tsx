@@ -30,7 +30,7 @@ export const Navbar = () => {
       setTransparentBackground(false);
       window.removeEventListener("scroll", changeNavButton);
     }
-  }, [isHome]);
+  }, [isHome, changeNavButton]);
 
   const variants = {
     open: { opacity: 1, y: 0 },
