@@ -64,7 +64,7 @@ export const Navbar = () => {
         }
       )}
     >
-      <Link href={"/"}>
+      <Link href={"/"} className={"z-100"}>
         <Image width="121" height="12" src="/logo.png" alt="logo main" />
       </Link>
 
