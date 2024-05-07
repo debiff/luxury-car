@@ -7,7 +7,6 @@ import { inconsolata } from "@/app/ui/fonts";
 import { MenuButton } from "@/app/ui/navbar/MenuButton";
 import { MenuItems } from "@/app/ui/navbar/MenuItems";
 import { motion } from "framer-motion";
-import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -31,7 +30,7 @@ export const Navbar = () => {
       setTransparentBackground(false);
       window.removeEventListener("scroll", changeNavButton);
     }
-  }, [isHome]);
+  }, [isHome, changeNavButton]);
 
   const variants = {
     open: { opacity: 1, y: 0 },
@@ -65,11 +64,11 @@ export const Navbar = () => {
         }
       )}
     >
-      <Link href={"/"}>
+      <Link href={"/"} className={"z-[100]"}>
         <Image width="121" height="12" src="/logo.png" alt="logo main" />
       </Link>
 
-      <MenuItems className={"hidden md:block"} />
+      <MenuItems className={"hidden md:block"} setIsMenuOpen={setIsMenuOpen} />
       <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)} />
       <motion.nav
         className={`fixed
@@ -92,7 +91,7 @@ export const Navbar = () => {
         variants={variants}
         transition={{ duration: 0.5 }}
       >
-        <MenuItems />
+        <MenuItems setIsMenuOpen={setIsMenuOpen} />
       </motion.nav>
     </header>
   );

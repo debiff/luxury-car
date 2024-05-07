@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "@/app/ui/navbar/MenuItems/menuItem.module.css";
 import { usePathname } from "next/navigation";
@@ -5,16 +6,29 @@ import Link from "next/link";
 
 type Props = {
   className?: string;
+  setIsMenuOpen?: (_: boolean) => void;
 };
 
-type MenuItemProps = {
+type MenuItemProps = Pick<Props, "setIsMenuOpen"> & {
   label: string;
   url: string;
 };
 
-export const MenuItem: React.FC<MenuItemProps> = ({ label, url }) => (
+export const MenuItem: React.FC<MenuItemProps> = ({
+  setIsMenuOpen,
+  label,
+  url
+}) => (
   <li key={label} className={"relative group"}>
-    <Link className={`${styles.item}`} href={url}>
+    <Link
+      className={`${styles.item}`}
+      href={url}
+      onClick={() => {
+        if (setIsMenuOpen) {
+          setIsMenuOpen(false);
+        }
+      }}
+    >
       <div
         className={`translate-x-0 duration-700 ease-in-out group-hover:translate-x-4`}
       >
