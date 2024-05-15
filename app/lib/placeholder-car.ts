@@ -49,10 +49,10 @@ import car12_4 from "@/public/cars/12/4.webp";
 import car1_list from "@/public/cars/1.png";
 import car2_list from "@/public/cars/2.png";
 import car3_list from "@/public/cars/3.png";
-import car4_list from "@/public/cars/5.png";
-import car5_list from "@/public/cars/6.png";
-import car6_list from "@/public/cars/7.png";
-import car7_list from "@/public/cars/8.png";
+import car4_list from "@/public/cars/4.png";
+import car5_list from "@/public/cars/5.png";
+import car6_list from "@/public/cars/6.png";
+import car7_list from "@/public/cars/7.png";
 import car8_list from "@/public/cars/8.png";
 import car9_list from "@/public/cars/9.png";
 import car10_list from "@/public/cars/10.png";
@@ -159,9 +159,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car3_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 4.5,
+    maxSpeed: 210,
+    enginePower: 585,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -197,6 +197,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.alvolante.it/primo_contatto/mercedes-v-300-d
     id: 5,
     name: "V Class",
     make: "Mercedes",
@@ -207,9 +208,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car5_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 7.9,
+    maxSpeed: 220,
+    enginePower: 239,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -221,6 +222,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.quattroruote.it/auto/land-rover/rr-sport-2-serie/range-rover-sport-30-sdv6-249-cv-s-125149201806
     id: 6,
     name: "Range Rover Sport",
     make: "Land Rover",
@@ -231,9 +233,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car6_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 7.9,
+    maxSpeed: 209,
+    enginePower: 249,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -245,8 +247,9 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.alvolante.it/primo_contatto/land-rover-defender-90-p400
     id: 7,
-    name: "Range Rover Defender",
+    name: "Defender",
     make: "Land Rover",
     category: "Luxury",
     imageList: {
@@ -255,9 +258,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car7_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 6,
+    maxSpeed: 191,
+    enginePower: 400,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -269,6 +272,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.quattroruote.it/auto/audi/q7-2-serie/q7-30-tdi-272-cv-quattro-tiptronic-108820201504
     id: 8,
     name: "Q7",
     make: "Audi",
@@ -279,9 +283,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car8_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 6.3,
+    maxSpeed: 234,
+    enginePower: 272,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -293,6 +297,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://listino.motori24.ilsole24ore.com/auto-prezzi/ferrari/portofino-m/portofino-m/
     id: 9,
     name: "Portofino",
     make: "Ferrari",
@@ -303,9 +308,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car9_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 3.5,
+    maxSpeed: 320,
+    enginePower: 620,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
@@ -317,6 +322,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.lamborghini.com/it-en/modelli/huracan/huracan-evo-spyder
     id: 10,
     name: "Huracán Evo Spyder",
     make: "Lamborghini",
@@ -327,10 +333,10 @@ export const Cars: ReadonlyArray<Car> = [
       height: car10_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
-    availableColors: ["#000000"],
+    "0to100": 3.1,
+    maxSpeed: 325,
+    enginePower: 640,
+    availableColors: ["#FFF"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
@@ -341,6 +347,7 @@ export const Cars: ReadonlyArray<Car> = [
     ]
   },
   {
+    // https://www.porsche.com/italy/models/911/911-models/carrera-4s-cabriolet/
     id: 11,
     name: "992 4S Cabriolet",
     make: "Porsche",
@@ -351,10 +358,10 @@ export const Cars: ReadonlyArray<Car> = [
       height: car11_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
-    availableColors: ["#000000"],
+    "0to100": 3.8,
+    maxSpeed: 304,
+    enginePower: 450,
+    availableColors: ["#00194b"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     gallery: [
@@ -375,9 +382,9 @@ export const Cars: ReadonlyArray<Car> = [
       height: car12_list.height
     },
     fromPrice: 500,
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
+    "0to100": 6.3,
+    maxSpeed: 250,
+    enginePower: 245,
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
