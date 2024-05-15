@@ -73,8 +73,11 @@ const Car = (car: CarType) => {
   );
 };
 
-const allCarCategories = { id: "all", name: "Vehicle type" };
-const Page = () => {
+const FleetList = (props: {
+  selectedMake: Make | undefined;
+  selectedCategory: Category | undefined;
+  setSelectedCategory: (category: Category) => void;
+}) => {
   const [selectedMake, setSelectedMake] = useState<Make | undefined>();
   const [selectedCategory, setSelectedCategory] = useState<
     Category | undefined
@@ -94,6 +97,48 @@ const Page = () => {
   const filteredCars = Cars.filter(
     car => !selectedMake || car.make === selectedMake
   ).filter(car => !selectedCategory || car.category === selectedCategory);
+
+  return (
+    <>
+      <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
+        {filteredCars.map(car => (
+          <Car key={car.id} {...car} />
+        ))}
+      </section>
+      <section
+        className={
+          "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"
+        }
+      >
+        {filteredCars.map(car => (
+          <Car key={car.id} {...car} />
+        ))}
+      </section>
+    </>
+  );
+};
+
+const allCarCategories = { id: "all", name: "Vehicle type" };
+const Page = () => {
+  const [selectedMake, setSelectedMake] = useState<Make | undefined>();
+  const [selectedCategory, setSelectedCategory] = useState<
+    Category | undefined
+  >();
+  // const searchParams = useSearchParams();
+  // const searchCategory = searchParams.get("category");
+  //
+  // useEffect(() => {
+  //   if (
+  //     searchCategory &&
+  //     category.filter(c => c === searchCategory).length > 0
+  //   ) {
+  //     setSelectedCategory(searchCategory as Category);
+  //   }
+  // }, [searchCategory]);
+
+  // const filteredCars = Cars.filter(
+  //   car => !selectedMake || car.make === selectedMake
+  // ).filter(car => !selectedCategory || car.category === selectedCategory);
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -153,24 +198,29 @@ const Page = () => {
         </div>
       </section>
       <Suspense>
-        <section
-          className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}
-        >
-          {filteredCars.map(car => (
-            <Car key={car.id} {...car} />
-          ))}
-        </section>
-      </Suspense>
-      <Suspense>
-        <section
-          className={
-            "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"
-          }
-        >
-          {filteredCars.map(car => (
-            <Car key={car.id} {...car} />
-          ))}
-        </section>
+        <FleetList
+          selectedMake={selectedMake}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+        {/*  <section*/}
+        {/*    className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}*/}
+        {/*  >*/}
+        {/*    {filteredCars.map(car => (*/}
+        {/*      <Car key={car.id} {...car} />*/}
+        {/*    ))}*/}
+        {/*  </section>*/}
+        {/*</Suspense>*/}
+        {/*<Suspense>*/}
+        {/*  <section*/}
+        {/*    className={*/}
+        {/*      "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {filteredCars.map(car => (*/}
+        {/*      <Car key={car.id} {...car} />*/}
+        {/*    ))}*/}
+        {/*  </section>*/}
       </Suspense>
     </main>
   );
