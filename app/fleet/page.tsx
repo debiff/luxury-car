@@ -12,7 +12,7 @@ import {
 } from "@/app/lib/placeholder-car";
 import { Button } from "@/app/ui/commons/Button";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const Car = (car: CarType) => {
   const router = useRouter();
@@ -152,20 +152,26 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
-        {filteredCars.map(car => (
-          <Car key={car.id} {...car} />
-        ))}
-      </section>
-      <section
-        className={
-          "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"
-        }
-      >
-        {filteredCars.map(car => (
-          <Car key={car.id} {...car} />
-        ))}
-      </section>
+      <Suspense>
+        <section
+          className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}
+        >
+          {filteredCars.map(car => (
+            <Car key={car.id} {...car} />
+          ))}
+        </section>
+      </Suspense>
+      <Suspense>
+        <section
+          className={
+            "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"
+          }
+        >
+          {filteredCars.map(car => (
+            <Car key={car.id} {...car} />
+          ))}
+        </section>
+      </Suspense>
     </main>
   );
 };
