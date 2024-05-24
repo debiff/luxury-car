@@ -5,7 +5,7 @@ export const MenuButton = ({ onClick }: Props) => {
   return (
     <div className="group z-50 md:hidden block ">
       <div>
-        <a href="javascript:void(0)" onClick={onClick}>
+        <a onClick={onClick}>
           <svg
             className="stroke-white"
             xmlns="http://www.w3.org/2000/svg"
