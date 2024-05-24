@@ -4,17 +4,48 @@ import { DateInput } from "@/app/ui/commons/dateInput";
 import { Button } from "@/app/ui/commons/Button";
 import { SelectBoxInput } from "@/app/ui/commons/selectBoxInput";
 import { Cars } from "@/app/lib/placeholder-car";
+import useSWRMutation from "swr/mutation";
+import { routes } from "@/app/routePaths";
+import { bookingFormSchema, BookingForm } from "@/types/bookingForm";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 type Props = {
   setIsModalOpen: (isOpen: boolean) => void;
   carId?: number;
 };
 export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<BookingForm>({
+    resolver: zodResolver(bookingFormSchema),
+    mode: "all",
+    reValidateMode: "onChange"
+  });
+
+  const fetcher = async (url: string, { arg }: { arg: BookingForm }) => {
+    const res = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(arg)
+    });
+    return res.json();
+  };
+
+  const { trigger } = useSWRMutation(routes.bookingApi(), fetcher);
+
   const carsOptions = Cars.slice()
     .sort((a, b) => (`${a.make} ${a.name}` > `${b.make} ${b.name}` ? 1 : -1))
     .map(car => `${car.make} ${car.name}`);
 
   const selectedCar = Cars.find(car => car.id === carId);
+
+  const onSubmit = (data: BookingForm) => {
+    console.log("data", data);
+    console.log("errors", errors);
+    void trigger(data);
+  };
 
   return (
     <>
@@ -56,7 +87,10 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
         >
           <XMarkIcon width={"24px"} />
         </div>
-        <div className={"flex flex-col md:justify-center md:items-center"}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={"flex flex-col md:justify-center md:items-center"}
+        >
           <TextInput placeholder={"Name"} />
           <TextInput placeholder={"Email"} />
           <TextInput placeholder={"Phone"} />
@@ -74,9 +108,11 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
           <TextInput placeholder={"Drop off location"} />
           <DateInput placeholder={"Drop off date"} />
           <div className={"md:w-1/2"}>
-            <Button variant={"modal"}>BOOK NOW</Button>
+            <Button type={"submit"} variant={"modal"}>
+              BOOK NOW
+            </Button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );
