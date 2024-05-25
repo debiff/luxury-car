@@ -7,7 +7,7 @@ import { Cars } from "@/app/lib/placeholder-car";
 import useSWRMutation from "swr/mutation";
 import { routes } from "@/app/routePaths";
 import { bookingFormSchema, BookingForm } from "@/types/bookingForm";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 type Props = {
@@ -15,11 +15,7 @@ type Props = {
   carId?: number;
 };
 export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<BookingForm>({
+  const methods = useForm<BookingForm>({
     resolver: zodResolver(bookingFormSchema),
     mode: "all",
     reValidateMode: "onChange"
@@ -41,9 +37,9 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
 
   const selectedCar = Cars.find(car => car.id === carId);
 
+  console.log(methods.formState.errors);
   const onSubmit = (data: BookingForm) => {
     console.log("data", data);
-    console.log("errors", errors);
     void trigger(data);
   };
 
@@ -87,32 +83,65 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
         >
           <XMarkIcon width={"24px"} />
         </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className={"flex flex-col md:justify-center md:items-center"}
-        >
-          <TextInput placeholder={"Name"} />
-          <TextInput placeholder={"Email"} />
-          <TextInput placeholder={"Phone"} />
-          <SelectBoxInput
-            placeholder={"Select your car"}
-            options={carsOptions}
-            selected={
-              selectedCar
-                ? `${selectedCar.make} ${selectedCar.name}`
-                : undefined
-            }
-          />
-          <TextInput placeholder={"Pick up location"} />
-          <DateInput placeholder={"Pick up date"} />
-          <TextInput placeholder={"Drop off location"} />
-          <DateInput placeholder={"Drop off date"} />
-          <div className={"md:w-1/2"}>
-            <Button type={"submit"} variant={"modal"}>
-              BOOK NOW
-            </Button>
-          </div>
-        </form>
+        <FormProvider {...methods}>
+          <form
+            onSubmit={methods.handleSubmit(onSubmit)}
+            className={"flex flex-col md:justify-center md:items-center"}
+          >
+            <TextInput
+              placeholder={"Name"}
+              name={"name"}
+              errorMessage={
+                methods.formState.errors.name
+                  ? "Please, insert your name"
+                  : undefined
+              }
+            />
+            <TextInput
+              placeholder={"Email"}
+              name={"email"}
+              errorMessage={
+                methods.formState.errors.email
+                  ? "Please, insert a valid email"
+                  : undefined
+              }
+            />
+            <TextInput
+              placeholder={"Phone"}
+              name={"phone"}
+              errorMessage={
+                methods.formState.errors.phone
+                  ? "Please, insert your number with "
+                  : undefined
+              }
+            />
+            <SelectBoxInput
+              placeholder={"Select your car"}
+              options={carsOptions}
+              selected={
+                selectedCar
+                  ? `${selectedCar.make} ${selectedCar.name}`
+                  : undefined
+              }
+              name={"car"}
+            />
+            <TextInput
+              placeholder={"Pick up location"}
+              name={"pickUpLocation"}
+            />
+            <DateInput placeholder={"Pick up date"} name={"pickUpDate"} />
+            <TextInput
+              placeholder={"Drop off location"}
+              name={"dropOffLocation"}
+            />
+            <DateInput placeholder={"Drop off date"} name={"dropOffDate"} />
+            <div className={"md:w-1/2"}>
+              <Button type={"submit"} variant={"modal"}>
+                BOOK NOW
+              </Button>
+            </div>
+          </form>
+        </FormProvider>
       </div>
     </>
   );

@@ -1,15 +1,24 @@
 import { inconsolata } from "@/app/ui/fonts";
+import { useFormContext } from "react-hook-form";
+import clsx from "clsx";
 
 type Props = {
   placeholder: string;
+  name: string;
+  errorMessage?: string;
 };
-export const TextInput = ({ placeholder }: Props) => (
-  <input
-    type={"text"}
-    style={{
-      boxShadow: "none"
-    }}
-    className={`
+export const TextInput = ({ placeholder, name, errorMessage }: Props) => {
+  const { register } = useFormContext();
+  return (
+    <>
+      <input
+        type={"text"}
+        style={{
+          boxShadow: "none"
+        }}
+        {...register(name)}
+        className={clsx(
+          `
                     ${inconsolata.className}
                     w-full
                     md:w-2/3
@@ -27,8 +36,19 @@ export const TextInput = ({ placeholder }: Props) => (
                     transition-colors
                     outline-0
                     leading-[28px]
-                    mb-[20px]
-                  `}
-    placeholder={placeholder}
-  />
-);
+                  `,
+          {
+            "mb-[20px] py-[9px]": !errorMessage,
+            "mb-[2px] pt-[9px] py-[3px]": errorMessage
+          }
+        )}
+        placeholder={placeholder}
+      />
+      {errorMessage && (
+        <span className={"text-[#BFA37C] text-[10px]  w-full md:w-2/3"}>
+          {errorMessage}
+        </span>
+      )}
+    </>
+  );
+};

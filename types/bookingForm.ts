@@ -5,7 +5,7 @@ export const bookingFormSchema = z.object({
   email: z.string().email(),
   phone: z.string().min(1),
   car: z.string().min(1),
-  pickUpDate: z.date(),
+  pickUpDate: z.date().min(new Date()),
   pickUpLocation: z.string().min(1),
   dropOffDate: z.date(),
   dropOffLocation: z.string().min(1)
