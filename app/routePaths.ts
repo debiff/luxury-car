@@ -1,3 +1,3 @@
 export const routes = {
-  bookingApi: () => `/booking`
+  bookingApi: () => `/api/booking`
 };

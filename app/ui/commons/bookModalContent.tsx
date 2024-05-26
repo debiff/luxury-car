@@ -9,6 +9,7 @@ import { routes } from "@/app/routePaths";
 import { bookingFormSchema, BookingForm } from "@/types/bookingForm";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 
 type Props = {
   setIsModalOpen: (isOpen: boolean) => void;
@@ -29,7 +30,13 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
     return res.json();
   };
 
-  const { trigger } = useSWRMutation(routes.bookingApi(), fetcher);
+  const { trigger, data, error } = useSWRMutation(routes.bookingApi(), fetcher);
+
+  useEffect(() => {
+    if (data) {
+      setIsModalOpen(false);
+    }
+  }, [data, setIsModalOpen]);
 
   const carsOptions = Cars.slice()
     .sort((a, b) => (`${a.make} ${a.name}` > `${b.make} ${b.name}` ? 1 : -1))
@@ -37,9 +44,7 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
 
   const selectedCar = Cars.find(car => car.id === carId);
 
-  console.log(methods.formState.errors);
   const onSubmit = (data: BookingForm) => {
-    console.log("data", data);
     void trigger(data);
   };
 
@@ -136,6 +141,13 @@ export const BookModalContent = ({ setIsModalOpen, carId }: Props) => {
             />
             <DateInput placeholder={"Drop off date"} name={"dropOffDate"} />
             <div className={"md:w-1/2"}>
+              {error && (
+                <span>
+                  {
+                    "An error has occurred while sending the request. Please try again later."
+                  }
+                </span>
+              )}
               <Button type={"submit"} variant={"modal"}>
                 BOOK NOW
               </Button>
