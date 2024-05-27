@@ -3,7 +3,16 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
-  const { name, email, phone, car } = await request.json();
+  const {
+    name,
+    email,
+    phone,
+    car,
+    pickUpDate,
+    pickUpLocation,
+    dropOffDate,
+    dropOffLocation
+  } = await request.json();
 
   const transport = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -18,8 +27,17 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_BOOKING_FROM,
     to: process.env.EMAIL_BOOKING_TO,
-    subject: `Message from pippo`,
-    text: "Hello pippo"
+    subject: `Reservation for ${car} for ${name}`,
+    text: `
+    Name: ${name}
+    Email: ${email}
+    Phone: ${phone}
+    Car: ${car}
+    Pick up date: ${pickUpDate}
+    Pick up location: ${pickUpLocation}
+    Drop off date: ${dropOffDate}
+    Drop off location: ${dropOffLocation}
+    `
   };
 
   const sendMailPromise = () =>
