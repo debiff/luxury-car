@@ -28,9 +28,9 @@ const Car = (car: CarType) => {
       <div
         className={`${epilogue.className} mt-9 flex flex-col justify-center text-[#0c1315]`}
       >
-        <h5 className={"mb-8"}>{car.name}</h5>
-        <span className={`${sora.className} mb-4 text-[16px] text-[#404040]`}>
-          {car.descriptionShort}
+        <h5 className={"mb-2"}>{car.name}</h5>
+        <span className={`${sora.className} mb-10 text-[16px] text-[#404040]`}>
+          {car.make}
         </span>
         <div className={`${sora.className} flex items-end`}>
           <span

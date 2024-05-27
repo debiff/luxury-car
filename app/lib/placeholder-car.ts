@@ -59,7 +59,18 @@ import car10_list from "@/public/cars/10.png";
 import car11_list from "@/public/cars/11.png";
 import car12_list from "@/public/cars/12.png";
 import React from "react";
-import { Description } from "@/public/cars/2/description";
+import { Description as car1_description } from "@/public/cars/1/description";
+import { Description as car2_description } from "@/public/cars/2/description";
+import { Description as car3_description } from "@/public/cars/3/description";
+import { Description as car4_description } from "@/public/cars/4/description";
+import { Description as car5_description } from "@/public/cars/5/description";
+import { Description as car6_description } from "@/public/cars/6/description";
+import { Description as car7_description } from "@/public/cars/7/description";
+import { Description as car8_description } from "@/public/cars/8/description";
+import { Description as car9_description } from "@/public/cars/9/description";
+import { Description as car10_description } from "@/public/cars/10/description";
+import { Description as car11_description } from "@/public/cars/11/description";
+import { Description as car12_description } from "@/public/cars/12/description";
 
 type CarImage = { src: string; width: number; height: number };
 export const make = [
@@ -115,6 +126,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car1_description,
     gallery: [
       { src: car1_1.src, width: car1_1.width, height: car1_1.height },
       { src: car1_2.src, width: car1_2.width, height: car1_2.height },
@@ -139,8 +151,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-    description: Description,
-
+    description: car2_description,
     gallery: [
       { src: car2_1.src, width: car2_1.width, height: car2_1.height },
       { src: car2_2.src, width: car2_2.width, height: car2_2.height },
@@ -165,6 +176,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car3_description,
     gallery: [
       { src: car3_1.src, width: car3_1.width, height: car3_1.height },
       { src: car3_2.src, width: car3_2.width, height: car3_2.height },
@@ -189,6 +201,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car4_description,
     gallery: [
       { src: car4_1.src, width: car4_1.width, height: car4_1.height },
       { src: car4_2.src, width: car4_2.width, height: car4_2.height },
@@ -214,6 +227,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car5_description,
     gallery: [
       { src: car5_1.src, width: car5_1.width, height: car5_1.height },
       { src: car5_2.src, width: car5_2.width, height: car5_2.height },
@@ -239,6 +253,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car6_description,
     gallery: [
       { src: car6_1.src, width: car6_1.width, height: car6_1.height },
       { src: car6_2.src, width: car6_2.width, height: car6_2.height },
@@ -264,6 +279,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car7_description,
     gallery: [
       { src: car7_1.src, width: car7_1.width, height: car7_1.height },
       { src: car7_2.src, width: car7_2.width, height: car7_2.height },
@@ -289,6 +305,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car8_description,
     gallery: [
       { src: car8_1.src, width: car8_1.width, height: car8_1.height },
       { src: car8_2.src, width: car8_2.width, height: car8_2.height },
@@ -314,6 +331,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car9_description,
     gallery: [
       { src: car9_1.src, width: car9_1.width, height: car9_1.height },
       { src: car9_2.src, width: car9_2.width, height: car9_2.height },
@@ -339,6 +357,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#FFF"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car10_description,
     gallery: [
       { src: car10_1.src, width: car10_1.width, height: car10_1.height },
       { src: car10_2.src, width: car10_2.width, height: car10_2.height },
@@ -364,6 +383,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#00194b"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car11_description,
     gallery: [
       { src: car11_1.src, width: car11_1.width, height: car11_1.height },
       { src: car11_2.src, width: car11_2.width, height: car11_2.height },
@@ -388,6 +408,7 @@ export const Cars: ReadonlyArray<Car> = [
     availableColors: ["#000000"],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car12_description,
     gallery: [
       { src: car12_1.src, width: car12_1.width, height: car12_1.height },
       { src: car12_2.src, width: car12_2.width, height: car12_2.height },
