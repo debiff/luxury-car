@@ -94,12 +94,20 @@ const FleetList = ({
     }
   }, [searchCategory, setSelectedCategory]);
 
-  console.log(selectedMake);
   const filteredCars = Cars.filter(
     car => !selectedMake || car.make === selectedMake
-  ).filter(car => !selectedCategory || car.category === selectedCategory);
+  ).filter(car => !selectedCategory || car.category.includes(selectedCategory));
 
-  return (
+  return filteredCars.length === 0 ? (
+    <div className={"flex flex-col flex-1 items-center mb-16"}>
+      <h5 className={"mb-6"}>
+        No car available for the category and the make you choose.
+      </h5>
+      <h5>Please contact us and let us know which car you're looking for</h5>
+
+      <h5>We will do our best to satisfy your needs</h5>
+    </div>
+  ) : (
     <>
       <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
         {filteredCars.map(car => (
