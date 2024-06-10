@@ -73,15 +73,15 @@ const Car = (car: CarType) => {
   );
 };
 
-const FleetList = (props: {
+const FleetList = ({
+  selectedCategory,
+  setSelectedCategory,
+  selectedMake
+}: {
   selectedMake: Make | undefined;
   selectedCategory: Category | undefined;
   setSelectedCategory: (category: Category) => void;
 }) => {
-  const [selectedMake, setSelectedMake] = useState<Make | undefined>();
-  const [selectedCategory, setSelectedCategory] = useState<
-    Category | undefined
-  >();
   const searchParams = useSearchParams();
   const searchCategory = searchParams.get("category");
 
@@ -92,13 +92,22 @@ const FleetList = (props: {
     ) {
       setSelectedCategory(searchCategory as Category);
     }
-  }, [searchCategory]);
+  }, [searchCategory, setSelectedCategory]);
 
   const filteredCars = Cars.filter(
     car => !selectedMake || car.make === selectedMake
-  ).filter(car => !selectedCategory || car.category === selectedCategory);
+  ).filter(car => !selectedCategory || car.category.includes(selectedCategory));
 
-  return (
+  return filteredCars.length === 0 ? (
+    <div className={"flex flex-col flex-1 items-center mb-16"}>
+      <h5 className={"mb-6"}>
+        No car available for the category and the make you choose.
+      </h5>
+      <h5>Please contact us and let us know which car you're looking for</h5>
+
+      <h5>We will do our best to satisfy your needs</h5>
+    </div>
+  ) : (
     <>
       <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
         {filteredCars.map(car => (
@@ -119,11 +128,14 @@ const FleetList = (props: {
 };
 
 const allCarCategories = { id: "all", name: "Vehicle type" };
+const allCarMakes = { id: "all", name: "Vehicle make" };
 const Page = () => {
   const [selectedMake, setSelectedMake] = useState<Make | undefined>();
   const [selectedCategory, setSelectedCategory] = useState<
     Category | undefined
   >();
+  const searchParams = useSearchParams();
+  const searchCategory = searchParams.get("category");
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -158,11 +170,18 @@ const Page = () => {
           </div>
           <div className={"md:flex md:flex-row"}>
             <SelectBox
-              defaultOption={selectedCategory ?? "Vehicle type"}
+              defaultOption={
+                selectedCategory
+                  ? selectedCategory
+                  : searchCategory
+                    ? searchCategory
+                    : "Vehicle type"
+              }
               options={[
                 allCarCategories,
                 ...category
                   .slice()
+                  .sort()
                   .map((c, i) => ({ id: i.toString(), name: c }))
               ]}
               onSelect={v =>
@@ -173,11 +192,18 @@ const Page = () => {
             />
             <SelectBox
               defaultOption={"Vehicle make"}
-              options={make
-                .slice()
-                .sort()
-                .map((m, i) => ({ id: i.toString(), name: m }))}
-              onSelect={v => setSelectedMake(v as Make)}
+              options={[
+                allCarMakes,
+                ...make
+                  .slice()
+                  .sort()
+                  .map((m, i) => ({ id: i.toString(), name: m }))
+              ]}
+              onSelect={v =>
+                setSelectedMake(
+                  v === allCarMakes.name ? undefined : (v as Make)
+                )
+              }
             />
           </div>
         </div>
@@ -188,24 +214,6 @@ const Page = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        {/*  <section*/}
-        {/*    className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}*/}
-        {/*  >*/}
-        {/*    {filteredCars.map(car => (*/}
-        {/*      <Car key={car.id} {...car} />*/}
-        {/*    ))}*/}
-        {/*  </section>*/}
-        {/*</Suspense>*/}
-        {/*<Suspense>*/}
-        {/*  <section*/}
-        {/*    className={*/}
-        {/*      "relative md:grid grid-cols-4 rw-full px-10 pb-32 gap-10 hidden"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {filteredCars.map(car => (*/}
-        {/*      <Car key={car.id} {...car} />*/}
-        {/*    ))}*/}
-        {/*  </section>*/}
       </Suspense>
     </main>
   );
