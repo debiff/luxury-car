@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { inconsolata } from "@/app/ui/fonts";
+import { useFormContext } from "react-hook-form";
 type Props = {
   placeholder: string;
+  name: string;
 };
-export const DateInput = ({ placeholder }: Props) => {
+export const DateInput = ({ placeholder, name }: Props) => {
   const [date, setDate] = useState<string | undefined>(undefined);
+  const { register } = useFormContext();
   return (
     <div className={"relative md:w-2/3"}>
       {!date && (
@@ -24,6 +27,7 @@ export const DateInput = ({ placeholder }: Props) => {
       )}
       <input
         type={"date"}
+        {...register(name, { valueAsDate: true })}
         style={{
           boxShadow: "none"
         }}
@@ -47,7 +51,6 @@ export const DateInput = ({ placeholder }: Props) => {
                     leading-[28px]
                     mb-[20px]
                   `}
-        placeholder={placeholder}
         onChange={e => {
           setDate(e.target.value);
         }}

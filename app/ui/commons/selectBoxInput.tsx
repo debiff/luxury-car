@@ -1,16 +1,26 @@
 import { inconsolata } from "@/app/ui/fonts";
+import { useFormContext } from "react-hook-form";
 
 type Props = {
   placeholder: string;
   options: string[];
   selected?: string;
+  name: string;
 };
-export const SelectBoxInput = ({ options, placeholder, selected }: Props) => (
-  <select
-    style={{
-      boxShadow: "none"
-    }}
-    className={`
+export const SelectBoxInput = ({
+  options,
+  placeholder,
+  selected,
+  name
+}: Props) => {
+  const { register } = useFormContext();
+  return (
+    <select
+      style={{
+        boxShadow: "none"
+      }}
+      {...register(name)}
+      className={`
                     ${inconsolata.className}
                     w-full
                     md:w-2/3
@@ -30,14 +40,15 @@ export const SelectBoxInput = ({ options, placeholder, selected }: Props) => (
                     leading-[28px]
                     mb-[20px]
                   `}
-  >
-    <option value="" disabled selected={!selected}>
-      {placeholder}
-    </option>
-    {options.map((option, id) => (
-      <option key={id} value={option} selected={option === selected}>
-        {option}
+    >
+      <option value="" disabled selected={!selected}>
+        {placeholder}
       </option>
-    ))}
-  </select>
-);
+      {options.map((option, id) => (
+        <option key={id} value={option} selected={option === selected}>
+          {option}
+        </option>
+      ))}
+    </select>
+  );
+};

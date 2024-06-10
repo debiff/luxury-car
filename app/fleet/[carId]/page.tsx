@@ -261,11 +261,11 @@ const Page = ({ params }: Props) => {
               <h2
                 className={`${epilogue.className} text-[#0c1315] text-4xl mb-1`}
               >
-                Service Offered In This Vehicle{" "}
+                Services Offered with This Vehicle
               </h2>
               <p className={`${sora.className} my-2.5 text-[#404040]`}>
                 {
-                  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo laborum consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla est pariatur."
+                  "Indulge in an unparalleled luxury car rental experience with our exclusive services. We go above and beyond to ensure that your journey is as smooth and enjoyable as possible, offering a range of premium services designed to cater to your every need."
                 }
               </p>
               <ul
@@ -274,31 +274,57 @@ const Page = ({ params }: Props) => {
                 <li className={"mb-3"}>
                   <div className={"flex flex-row gap-2"}>
                     <CheckIcon width={19} />
-                    <span>{"Luxury Limousine Selectiont"}</span>
+                    <span>
+                      {
+                        "Professional delivery and pick-up service at your specified location"
+                      }
+                    </span>
                   </div>
                 </li>
                 <li className={"mb-3"}>
                   <div className={"flex flex-row gap-2"}>
                     <CheckIcon width={19} />
-                    <span>{"100% Luxurious Fleet"}</span>
+                    <span>
+                      {
+                        "Complimentary professional car wash before every rental"
+                      }
+                    </span>
                   </div>
                 </li>
                 <li className={"mb-3"}>
                   <div className={"flex flex-row gap-2"}>
                     <CheckIcon width={19} />
-                    <span>{"Clean, Polite & Knowledgeable"}</span>
+                    <span>{"24/7 roadside assistance"}</span>
                   </div>
                 </li>
                 <li className={"mb-3"}>
                   <div className={"flex flex-row gap-2"}>
                     <CheckIcon width={19} />
-                    <span>{"Fixed Price & Bonus System"}</span>
+                    <span>{"Comprehensive insurance coverage"}</span>
+                  </div>
+                </li>
+                <li className={"mb-3"}>
+                  <div className={"flex flex-row gap-2"}>
+                    <CheckIcon width={19} />
+                    <span>{"Personalized concierge service"}</span>
+                  </div>
+                </li>
+                <li className={"mb-3"}>
+                  <div className={"flex flex-row gap-2"}>
+                    <CheckIcon width={19} />
+                    <span>{"GPS navigation system"}</span>
+                  </div>
+                </li>
+                <li className={"mb-3"}>
+                  <div className={"flex flex-row gap-2"}>
+                    <CheckIcon width={19} />
+                    <span>{"Child seats available upon request"}</span>
                   </div>
                 </li>
               </ul>
               <p className={`${sora.className} my-2.5 text-[#404040]`}>
                 {
-                  "Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo, cum quis laoreet luctus penatibus ligula auctor, consequat. Duis aute irure dolor in reprehenderit etiam sollicitudin nisl est purus."
+                  "Our commitment to excellence ensures that every aspect of your rental experience is meticulously handled. Whether you need transportation for a special event, a business trip, or a leisurely drive, we provide the highest standards of service and luxury. Trust us to make your journey extraordinary."
                 }
               </p>
             </section>

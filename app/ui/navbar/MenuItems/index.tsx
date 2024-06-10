@@ -41,10 +41,10 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
   const pathname = usePathname();
 
   const items = [
-    // { label: "Home", href: "/" },
     // { label: "Pages", href: "/pages" },
-    { label: "Vehicle fleet", href: "/fleet" }
-    // { label: "Blog", href: "/blog" },
+    { label: "Vehicle fleet", href: "/fleet" },
+    { label: "About us", href: "/about-us" },
+    { label: "Contacts", href: "/contacts" }
     // { label: "Shop", href: "/shop" }
   ];
 
