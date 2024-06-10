@@ -103,7 +103,7 @@ const FleetList = ({
       <h5 className={"mb-6"}>
         No car available for the category and the make you choose.
       </h5>
-      <h5>Please contact us and let us know which car you're looking for</h5>
+      <h5>Please contact us and let us know which car you are looking for.</h5>
 
       <h5>We will do our best to satisfy your needs</h5>
     </div>
