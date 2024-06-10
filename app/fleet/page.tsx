@@ -124,21 +124,6 @@ const Page = () => {
   const [selectedCategory, setSelectedCategory] = useState<
     Category | undefined
   >();
-  // const searchParams = useSearchParams();
-  // const searchCategory = searchParams.get("category");
-  //
-  // useEffect(() => {
-  //   if (
-  //     searchCategory &&
-  //     category.filter(c => c === searchCategory).length > 0
-  //   ) {
-  //     setSelectedCategory(searchCategory as Category);
-  //   }
-  // }, [searchCategory]);
-
-  // const filteredCars = Cars.filter(
-  //   car => !selectedMake || car.make === selectedMake
-  // ).filter(car => !selectedCategory || car.category === selectedCategory);
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
