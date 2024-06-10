@@ -134,8 +134,6 @@ const Page = () => {
   const [selectedCategory, setSelectedCategory] = useState<
     Category | undefined
   >();
-  const searchParams = useSearchParams();
-  const searchCategory = searchParams.get("category");
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -171,11 +169,7 @@ const Page = () => {
           <div className={"md:flex md:flex-row"}>
             <SelectBox
               defaultOption={
-                selectedCategory
-                  ? selectedCategory
-                  : searchCategory
-                    ? searchCategory
-                    : "Vehicle type"
+                selectedCategory ? selectedCategory : "Vehicle type"
               }
               options={[
                 allCarCategories,
