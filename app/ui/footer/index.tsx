@@ -47,6 +47,8 @@ export const Footer = () => {
                 <MenuItem label={"Home"} url={"/"} />
                 {/*<MenuItem label={"Pages"} url={"#"} />*/}
                 <MenuItem label={"Vehicle fleet"} url={"/fleet"} />
+                <MenuItem label={"About us"} url={"/about-us"} />
+                <MenuItem label={"Contacts"} url={"/contacts"} />
                 {/*<MenuItem label={"Blog"} url={"#"} />*/}
               </ul>
             </div>
