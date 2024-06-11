@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { epilogue, sora } from "@/app/ui/fonts";
-import { Category, category } from "@/app/lib/placeholder-car";
+import { Cars, Category, category } from "@/app/lib/placeholder-car";
 import Link from "next/link";
 
 const CategoryContentMap = new Map<
@@ -15,7 +15,7 @@ const CategoryContentMap = new Map<
       image: "/preview/luxury.webp",
       description:
         "Indulge in opulence and prestige. Elevate your journey with unmatched comfort, style, and performance.",
-      fromPrice: "180"
+      fromPrice: "500"
     }
   ],
   [
@@ -184,7 +184,7 @@ const CategoryBox = ({ category }: { category: Category }) => {
                         leading-none
                         `}
                   >
-                    $
+                    €
                   </span>
                   <span>{categoryContent.fromPrice}</span>
                 </span>
@@ -195,7 +195,7 @@ const CategoryBox = ({ category }: { category: Category }) => {
                     before:mx-1
                     `}
                 >
-                  hour
+                  day
                 </span>
               </motion.div>
               <motion.div
