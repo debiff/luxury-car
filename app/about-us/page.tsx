@@ -4,31 +4,57 @@ import Counter from "@/app/about-us/components/Counter";
 
 const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col bg-white pb-[40px]">
+    <main className="flex min-h-screen flex-col bg-white">
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:pt-[80px] pl-12 md:pl-32 justify-between `}
+        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:py-[80px] pl-12 md:pl-32 justify-between `}
       >
-        <div className={"md:w-1/2"}>
+        <div className={"md:w-1/2 md:pr-4"}>
           <h2>Our Mission</h2>
-          <p className={"mt-[26px]"}>
-            Praesent elementum facilisis leo vel fringilla est. Vestibulum
-            lectus a mauris ultrices eros in cursus.
+          <p className="mt-[26px]">
+            {`At Car Luxury Rent, our mission is to provide the world's most
+              exclusive and prestigious luxury car rental service. We offer an
+              unparalleled selection of luxury vehicles, including brands like
+              Ferrari, Lamborghini, Rolls-Royce, and Bentley.`}
           </p>
-          <p className={"mt-[26px]"}>
-            Praesent elementum facilisis leo vel fringilla est. Vestibulum
-            lectus a mauris ultrices eros in cursus.
+          <p className="mt-[26px]">
+            Our state-of-the-art platform ensures a seamless booking experience,
+            giving our clients access to real-time insights and personalized
+            recommendations. We are committed to excellence, with a dedicated
+            team available 24/7 to support your needs.
+          </p>
+          <p className="mt-[26px]">
+            We strive to create unforgettable experiences for every client,
+            whether for a business trip, special occasion, or the sheer joy of
+            driving a luxury car. Our goal is to expand our global network,
+            setting new standards in the luxury car rental industry.
+          </p>
+          <p className="mt-[26px]">
+            Choose Car Luxury Rent for an unmatched luxury car rental
+            experience. Drive the future with us.
           </p>
         </div>
 
-        <Image src={"/about-us/1.webp"} alt={"us"} width={500} height={537} />
+        <Image
+          src={"/about-us/1.webp"}
+          className={"md:w-1/2"}
+          alt={"us"}
+          width={800}
+          height={533}
+        />
       </section>
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row pl-8 md:pl-0 pr-4 md:px-16 justify-between bg-[#F5F2E9]`}
+        className={`${epilogue.className} flex flex-col md:flex-row md:py-[80px] md:pr-32 justify-between bg-[#F5F2E9]`}
       >
-        <Image src={"/about-us/1.webp"} alt={"us"} width={500} height={537} />
+        <Image
+          className={"md:w-1/2"}
+          src={"/about-us/2.webp"}
+          alt={"us2"}
+          width={800}
+          height={533}
+        />
         <div
           className={
-            "flex flex-col flex-grow justify-center items-center mb-[3px] text-left"
+            "flex flex-col w-1/2 justify-center items-center mb-[3px] text-left"
           }
         >
           <div className={"pl-[14.5%] pr-[27%]"}>
@@ -84,7 +110,7 @@ const Page = () => {
         </div>
       </section>
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:pt-[80px] pl-8 pr-4 md:px-16 justify-center`}
+        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:py-[80px] pl-8 pr-4 md:px-16 justify-center `}
       >
         <div className={"md:w-1/2"}>
           <h2>
@@ -128,6 +154,7 @@ const Page = () => {
           </div>
         </div>
       </section>
+
       {/* TODO: Add newsletter subscription */}
       {/*<section*/}
       {/*  className={`${epilogue.className} flex flex-col md:flex-row pl-8 md:pl-0 pr-4 md:px-16 justify-between bg-[#F5F2E9]`}*/}
