@@ -6,9 +6,9 @@ const Page = () => {
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:py-[80px] pl-12 md:pl-32 justify-between `}
+        className={`${epilogue.className} flex flex-col md:flex-row pt-[50px] md:pt-[95px] md:py-[80px] md:px-4 md:pl-32 justify-between `}
       >
-        <div className={"md:w-1/2 md:pr-4"}>
+        <div className={"md:w-1/2 px-4 pb-16 md:pb-0 md:px-0 md:pr-4"}>
           <h2>Our Mission</h2>
           <p className="mt-[26px]">
             {`At Car Luxury Rent, our mission is to provide the world's most
@@ -43,7 +43,7 @@ const Page = () => {
         />
       </section>
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row md:py-[80px] md:pr-32 justify-between bg-[#F5F2E9]`}
+        className={`${epilogue.className} flex flex-col-reverse md:flex-row pt-24 md:py-[80px] md:pr-32 justify-between bg-[#F5F2E9]`}
       >
         <Image
           className={"md:w-1/2"}
@@ -54,10 +54,10 @@ const Page = () => {
         />
         <div
           className={
-            "flex flex-col w-1/2 justify-center items-center mb-[3px] text-left"
+            "flex flex-col md:w-1/2 pb-16 md:pb-0 justify-center items-center mb-[3px] text-left"
           }
         >
-          <div className={"pl-[14.5%] pr-[27%]"}>
+          <div className={"px-4 md:pl-[14.5%] md:pr-[27%]"}>
             <div>
               <h2>For Your Every Need</h2>
               <span
@@ -110,7 +110,7 @@ const Page = () => {
         </div>
       </section>
       <section
-        className={`${epilogue.className} flex flex-col md:flex-row pt-[95px] md:py-[80px] pl-8 pr-4 md:px-16 justify-center `}
+        className={`${epilogue.className} flex flex-col md:flex-row py-16 md:pt-[95px] md:py-[80px] pl-8 pr-4 md:px-16 justify-center `}
       >
         <div className={"md:w-1/2"}>
           <h2>
