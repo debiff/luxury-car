@@ -59,7 +59,7 @@ export const Footer = () => {
       <div className={"border-t border-[#2d363e] w-full"}>
         <div className={"px-16 pt-2 pb-2.5"}>
           <p className={`${sora.className} text-xs text-white leading-7`}>
-            © 2023-2024. All Rights Reserved
+            {`© 2023-${new Date().getFullYear()}. All Rights Reserved | P.Iva 09581400968`}
           </p>
         </div>
       </div>
