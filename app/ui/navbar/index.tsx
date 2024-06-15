@@ -46,6 +46,7 @@ export const Navbar = () => {
           flex
           flex-row
           justify-between
+          items-baseline
           px-5
           md:px-20
           font-normal
@@ -65,7 +66,7 @@ export const Navbar = () => {
       )}
     >
       <Link href={"/"} className={"z-[100]"}>
-        <Image width="121" height="12" src="/logo.png" alt="logo main" />
+        <Image width="240" height="10" src="/logo-white.webp" alt="logo main" />
       </Link>
 
       <MenuItems className={"hidden md:block"} setIsMenuOpen={setIsMenuOpen} />

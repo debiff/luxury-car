@@ -7,15 +7,15 @@ export const Footer = () => {
   return (
     <footer>
       <div className={"border-t border-[#2d363e] w-full pl-8 pr-4 md:px-16"}>
-        <div className={"pt-[131px] pb-[123px]"}>
+        <div className={"pt-20 md:pt-[131px] pb-[123px]"}>
           <div className={`${style.footerGrid} md:grid md:gap-x-24 relative`}>
             <div className={"mb-[66px] md:mb-0"}>
               <div className={"mb-9"}>
                 <Image
-                  src={"/logo-gold.png"}
-                  alt={"logo"}
-                  width={121}
-                  height={12}
+                  src={"/logo-extended-gold.webp"}
+                  alt={"logo extended gold"}
+                  width={404}
+                  height={36}
                 />
               </div>
 
