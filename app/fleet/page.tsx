@@ -148,8 +148,8 @@ const Page = () => {
       <div className={"text-center h-[400px] relative"}>
         <Image
           src="/fleet-header.webp"
+          className={"object-cover"}
           fill
-          objectFit="cover"
           quality={100}
           alt={"fleet header image"}
         />
