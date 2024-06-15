@@ -3,6 +3,7 @@ import { sora } from "@/app/ui/fonts";
 import { Navbar } from "@/app/ui/navbar";
 import { Footer } from "@/app/ui/footer";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
