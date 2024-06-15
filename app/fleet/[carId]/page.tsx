@@ -12,6 +12,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import { Cars } from "@/app/lib/placeholder-car";
 import z from "zod";
 import { BookModalContent } from "@/app/ui/commons/bookModalContent";
+import { useSearchParams } from "next/navigation";
 
 const StatItem = ({
   value,
@@ -92,6 +93,8 @@ const Page = ({ params }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const searchParams = useSearchParams();
+  const searchCategory = searchParams.get("category");
 
   const maybeCarId = numberValid.safeParse(params.carId);
 
@@ -105,6 +108,7 @@ const Page = ({ params }: Props) => {
     return null;
   }
 
+  const category = searchCategory ?? car.category[0];
   return (
     <>
       <main className="flex min-h-screen flex-col bg-white px-7 md:px-20">
@@ -127,11 +131,14 @@ const Page = ({ params }: Props) => {
             {"Home"}
           </Link>
           <span className={`mx-[5px]`}>{"/"}</span>
-          <Link className={`${styles.item}`} href={"/fleet?category=sport"}>
-            {"Sport"}
+          <Link
+            className={`${styles.item}`}
+            href={`/fleet?category=${category}`}
+          >
+            {category}
           </Link>
           <span className={`mx-[5px]`}>{"/"}</span>
-          <span>{"Porche Taycan Sport 6"}</span>
+          <span>{`${car.make} ${car.name}`}</span>
         </section>
         <div className={"md:flex md:flex-row-reverse gap-24 "}>
           <section

@@ -14,7 +14,13 @@ import { Button } from "@/app/ui/commons/Button";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
-const Car = (car: CarType) => {
+const Car = ({
+  car,
+  selectedCategory
+}: {
+  car: CarType;
+  selectedCategory: Category | undefined;
+}) => {
   const router = useRouter();
   return (
     <div key={car.id} className={"pt-8 px-8 pb-10 w-full min-h-1 bg-[#f7f5f2]"}>
@@ -63,7 +69,9 @@ const Car = (car: CarType) => {
         <Button
           variant={"secondary"}
           onClick={() => {
-            router.push(`/fleet/${car.id}`);
+            router.push(
+              `/fleet/${car.id}${selectedCategory ? "?category=" + selectedCategory : ""}`
+            );
           }}
         >
           MORE DETAILS
@@ -111,7 +119,7 @@ const FleetList = ({
     <>
       <section className={"w-full px-10 pb-32 flex flex-col gap-10 md:hidden"}>
         {filteredCars.map(car => (
-          <Car key={car.id} {...car} />
+          <Car key={car.id} car={car} selectedCategory={selectedCategory} />
         ))}
       </section>
       <section
@@ -120,7 +128,7 @@ const FleetList = ({
         }
       >
         {filteredCars.map(car => (
-          <Car key={car.id} {...car} />
+          <Car key={car.id} car={car} selectedCategory={selectedCategory} />
         ))}
       </section>
     </>
