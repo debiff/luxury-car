@@ -8,6 +8,7 @@ export async function POST(request: NextRequest) {
     email,
     phone,
     car,
+    color,
     pickUpDate,
     pickUpLocation,
     dropOffDate,
@@ -33,6 +34,7 @@ export async function POST(request: NextRequest) {
     Email: ${email}
     Phone: ${phone}
     Car: ${car}
+    Color: ${color}
     Pick up date: ${pickUpDate}
     Pick up location: ${pickUpLocation}
     Drop off date: ${dropOffDate}

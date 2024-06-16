@@ -27,7 +27,7 @@ export const TextInput = ({ placeholder, name, errorMessage }: Props) => {
                     border-0 
                     border-b 
                     border-[rgb(255 255 255 / 35%)] 
-                    text-[rgba(255,255,255,.5)] 
+                    text-[rgba(255,255,255,.7)] 
                     pl-[10px]
                     pr-[9px] 
                     py-[9px]
@@ -36,9 +36,10 @@ export const TextInput = ({ placeholder, name, errorMessage }: Props) => {
                     transition-colors
                     outline-0
                     leading-[28px]
+                    placeholder-[rgba(255,255,255,.7)]
                   `,
           {
-            "mb-[20px] py-[9px]": !errorMessage,
+            "mb-[15px] py-[9px]": !errorMessage,
             "mb-[2px] pt-[9px] py-[3px]": errorMessage
           }
         )}

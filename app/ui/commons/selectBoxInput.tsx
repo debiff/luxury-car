@@ -1,17 +1,20 @@
 import { inconsolata } from "@/app/ui/fonts";
 import { useFormContext } from "react-hook-form";
+import clsx from "clsx";
 
 type Props = {
   placeholder: string;
   options: string[];
   selected?: string;
   name: string;
+  disabled?: boolean;
 };
 export const SelectBoxInput = ({
   options,
   placeholder,
   selected,
-  name
+  name,
+  disabled
 }: Props) => {
   const { register } = useFormContext();
   return (
@@ -20,7 +23,8 @@ export const SelectBoxInput = ({
         boxShadow: "none"
       }}
       {...register(name)}
-      className={`
+      className={clsx(
+        `
                     ${inconsolata.className}
                     w-full
                     md:w-2/3
@@ -29,7 +33,7 @@ export const SelectBoxInput = ({
                     border-0 
                     border-b 
                     border-[rgb(255 255 255 / 35%)] 
-                    text-[rgba(255,255,255,.5)] 
+                    text-[rgba(255,255,255,.7)] 
                     pl-[10px]
                     pr-[9px] 
                     py-[9px]
@@ -38,8 +42,13 @@ export const SelectBoxInput = ({
                     transition-colors
                     outline-0
                     leading-[28px]
-                    mb-[20px]
-                  `}
+                    mb-[15px]
+                  
+                  `,
+        {
+          "pointer-events-none bg-[#0c1315] opacity-40": disabled
+        }
+      )}
     >
       <option value="" disabled selected={!selected}>
         {placeholder}

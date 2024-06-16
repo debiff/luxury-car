@@ -19,7 +19,7 @@ export const DateInput = ({ placeholder, name }: Props) => {
         pl-[10px]
         pr-[9px] 
         py-[9px]
-        text-[rgba(255,255,255,.5)] 
+        text-[rgba(255,255,255,.7)] 
       `}
         >
           {placeholder}
@@ -49,7 +49,7 @@ export const DateInput = ({ placeholder, name }: Props) => {
                     transition-colors
                     outline-0
                     leading-[28px]
-                    mb-[20px]
+                    mb-[15px]
                   `}
         onChange={e => {
           setDate(e.target.value);

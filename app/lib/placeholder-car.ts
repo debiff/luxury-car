@@ -102,7 +102,7 @@ export type Car = {
   "0to100": number;
   maxSpeed: number;
   enginePower: number;
-  availableColors: ReadonlyArray<string>;
+  availableColors: ReadonlyArray<{ label: string; value: string }>;
   descriptionShort: string;
   description?: React.JSX.Element;
   gallery: Array<CarImage>;
@@ -123,7 +123,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 5.3,
     maxSpeed: 272,
     enginePower: 353,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car1_description,
@@ -148,7 +148,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 3.6,
     maxSpeed: 315,
     enginePower: 585,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car2_description,
@@ -173,7 +173,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 4.5,
     maxSpeed: 210,
     enginePower: 585,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car3_description,
@@ -198,7 +198,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 5.3,
     maxSpeed: 272,
     enginePower: 353,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car4_description,
@@ -224,7 +224,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 7.9,
     maxSpeed: 220,
     enginePower: 239,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car5_description,
@@ -250,7 +250,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 7.9,
     maxSpeed: 209,
     enginePower: 249,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car6_description,
@@ -276,7 +276,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 6,
     maxSpeed: 191,
     enginePower: 400,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car7_description,
@@ -302,7 +302,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 6.3,
     maxSpeed: 234,
     enginePower: 272,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car8_description,
@@ -328,7 +328,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 3.5,
     maxSpeed: 320,
     enginePower: 620,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car9_description,
@@ -354,7 +354,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 3.1,
     maxSpeed: 325,
     enginePower: 640,
-    availableColors: ["#FFF"],
+    availableColors: [{ label: "White", value: "#FFF" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car10_description,
@@ -380,7 +380,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 3.8,
     maxSpeed: 304,
     enginePower: 450,
-    availableColors: ["#00194b"],
+    availableColors: [{ label: "Blue", value: "#00194b" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car11_description,
@@ -405,7 +405,7 @@ export const Cars: ReadonlyArray<Car> = [
     "0to100": 6.3,
     maxSpeed: 250,
     enginePower: 245,
-    availableColors: ["#000000"],
+    availableColors: [{ label: "Black", value: "#000000" }],
     descriptionShort:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
     description: car12_description,
