@@ -25,13 +25,6 @@ export async function POST(request: NextRequest) {
     }
   });
 
-  return NextResponse.json({
-    message: `${process.env.EMAIL_USER},
-    ${process.env.EMAIL_PASSWORD},
-    ${process.env.EMAIL_BOOKING_FROM},
-    ${process.env.EMAIL_BOOKING_TO}`
-  });
-
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_BOOKING_FROM,
     to: process.env.EMAIL_BOOKING_TO,
