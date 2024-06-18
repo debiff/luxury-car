@@ -9,7 +9,7 @@ import { epilogue, sora } from "@/app/ui/fonts";
 import { Rating } from "@/app/ui/commons/rating";
 import { Button } from "@/app/ui/commons/Button";
 import { CheckIcon } from "@heroicons/react/20/solid";
-import { Cars } from "@/app/lib/placeholder-car";
+import { Car, Cars } from "@/app/lib/placeholder-car";
 import z from "zod";
 import { BookModalContent } from "@/app/ui/commons/bookModalContent";
 import { useSearchParams } from "next/navigation";
@@ -50,7 +50,7 @@ const StatItem = ({
   </div>
 );
 
-const AvailableColors = ({ colors }: { colors: ReadonlyArray<string> }) => {
+const AvailableColors = ({ availableColors }: Pick<Car, "availableColors">) => {
   return (
     <div
       className={`${sora.className}
@@ -66,13 +66,13 @@ const AvailableColors = ({ colors }: { colors: ReadonlyArray<string> }) => {
     >
       <div className={"flex flex-row gap-1"}>
         {/*  Circle div that represents input colors */}
-        {colors.map((color, index) => (
+        {availableColors.map((color, index) => (
           <div
             key={index}
             className={`w-8 h-8 rounded-full`}
             style={{
-              backgroundColor: color,
-              ...(color === "#FFF" ? { border: "1px solid #000" } : {})
+              backgroundColor: color.value,
+              ...(color.value === "#FFF" ? { border: "1px solid #000" } : {})
             }}
           ></div>
         ))}
@@ -167,7 +167,7 @@ const Page = ({ params }: Props) => {
                 value={car.enginePower.toString()}
                 measureUnit={"cv"}
               />
-              <AvailableColors colors={car.availableColors} />
+              <AvailableColors availableColors={car.availableColors} />
             </div>
             <div className={"mt-[5px]"}>
               <Button
