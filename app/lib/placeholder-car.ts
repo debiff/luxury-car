@@ -46,6 +46,10 @@ import car12_1 from "@/public/cars/12/1.webp";
 import car12_2 from "@/public/cars/12/2.webp";
 import car12_3 from "@/public/cars/12/3.webp";
 import car12_4 from "@/public/cars/12/4.webp";
+import car13_1 from "@/public/cars/13/1.webp";
+import car13_2 from "@/public/cars/13/2.webp";
+import car13_3 from "@/public/cars/13/3.webp";
+import car13_4 from "@/public/cars/13/4.webp";
 import car1_list from "@/public/cars/1.png";
 import car2_list from "@/public/cars/2.png";
 import car3_list from "@/public/cars/3.png";
@@ -58,6 +62,7 @@ import car9_list from "@/public/cars/9.png";
 import car10_list from "@/public/cars/10.png";
 import car11_list from "@/public/cars/11.png";
 import car12_list from "@/public/cars/12.png";
+import car13_list from "@/public/cars/13.png";
 import React from "react";
 import { Description as car1_description } from "@/public/cars/1/description";
 import { Description as car2_description } from "@/public/cars/2/description";
@@ -71,6 +76,7 @@ import { Description as car9_description } from "@/public/cars/9/description";
 import { Description as car10_description } from "@/public/cars/10/description";
 import { Description as car11_description } from "@/public/cars/11/description";
 import { Description as car12_description } from "@/public/cars/12/description";
+import { Description as car13_description } from "@/public/cars/13/description";
 
 type CarImage = { src: string; width: number; height: number };
 export const make = [
@@ -414,6 +420,31 @@ export const Cars: ReadonlyArray<Car> = [
       { src: car12_2.src, width: car12_2.width, height: car12_2.height },
       { src: car12_3.src, width: car12_3.width, height: car12_3.height },
       { src: car12_4.src, width: car12_4.width, height: car12_4.height }
+    ]
+  },
+  {
+    id: 13,
+    name: "Urus",
+    make: "Lamborghini",
+    category: ["Luxury", "Suv", "Supercar"],
+    imageList: {
+      src: car13_list.src,
+      width: car13_list.width,
+      height: car13_list.height
+    },
+    fromPrice: 500,
+    "0to100": 6.3,
+    maxSpeed: 250,
+    enginePower: 245,
+    availableColors: [{ label: "Black", value: "#000000" }],
+    descriptionShort:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    description: car13_description,
+    gallery: [
+      { src: car13_1.src, width: car13_1.width, height: car13_1.height },
+      { src: car13_2.src, width: car13_2.width, height: car13_2.height },
+      { src: car13_3.src, width: car13_3.width, height: car13_3.height },
+      { src: car13_4.src, width: car13_4.width, height: car13_4.height }
     ]
   }
 ];

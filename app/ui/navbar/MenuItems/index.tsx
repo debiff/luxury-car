@@ -44,7 +44,7 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
     // { label: "Pages", href: "/pages" },
     { label: "Vehicle fleet", href: "/fleet" },
     { label: "About us", href: "/about-us" },
-    { label: "Contacts", href: "/contacts" }
+    { label: "Contacts", href: "/contact-us" }
     // { label: "Shop", href: "/shop" }
   ];
 
