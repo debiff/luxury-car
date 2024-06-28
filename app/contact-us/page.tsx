@@ -1,29 +1,29 @@
 import { epilogue } from "@/app/ui/fonts";
-import { useForm } from "react-hook-form";
-import { BookingForm, bookingFormSchema } from "@/types/bookingForm";
-import { zodResolver } from "@hookform/resolvers/zod";
-import useSWRMutation from "swr/mutation";
-import { routes } from "@/app/routePaths";
+// import { useForm } from "react-hook-form";
+// import { BookingForm, bookingFormSchema } from "@/types/bookingForm";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import useSWRMutation from "swr/mutation";
+// import { routes } from "@/app/routePaths";
 
 const Page = () => {
-  const methods = useForm<BookingForm>({
-    resolver: zodResolver(bookingFormSchema),
-    mode: "all",
-    reValidateMode: "onChange"
-  });
-
-  const fetcher = async (url: string, { arg }: { arg: BookingForm }) => {
-    const res = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(arg)
-    });
-    return res.json();
-  };
-
-  const { trigger, data, error } = useSWRMutation(
-    routes.contactUsApi(),
-    fetcher
-  );
+  // const methods = useForm<BookingForm>({
+  //   resolver: zodResolver(bookingFormSchema),
+  //   mode: "all",
+  //   reValidateMode: "onChange"
+  // });
+  //
+  // const fetcher = async (url: string, { arg }: { arg: BookingForm }) => {
+  //   const res = await fetch(url, {
+  //     method: "POST",
+  //     body: JSON.stringify(arg)
+  //   });
+  //   return res.json();
+  // };
+  //
+  // const { trigger, data, error } = useSWRMutation(
+  //   routes.contactUsApi(),
+  //   fetcher
+  // );
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <section
