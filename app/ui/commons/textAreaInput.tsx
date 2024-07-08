@@ -6,14 +6,8 @@ type Props = {
   placeholder: string;
   name: string;
   errorMessage?: string;
-  styles?: string;
 };
-export const TextInput = ({
-  placeholder,
-  name,
-  errorMessage,
-  styles
-}: Props) => {
+export const TextAreaInput = ({ placeholder, name, errorMessage }: Props) => {
   const { register } = useFormContext();
 
   const computedClassname = clsx(
@@ -45,8 +39,7 @@ export const TextInput = ({
 
   return (
     <>
-      <input
-        type={"text"}
+      <textarea
         style={{
           boxShadow: "none"
         }}

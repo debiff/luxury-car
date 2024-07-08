@@ -1,36 +1,15 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
-import { bookingFormSchema } from "@/types/bookingForm";
+import { contactUsFormSchema } from "@/types/contactUsForm";
 
 export async function POST(request: NextRequest) {
-  const {
-    name,
-    email,
-    phone,
-    car,
-    color,
-    pickUpDate,
-    pickUpLocation,
-    dropOffDate,
-    dropOffLocation
-  } = await request.json();
+  const { email, message } = await request.json();
 
-  if (
-    !bookingFormSchema.safeParse({
-      name,
-      email,
-      phone,
-      car,
-      color,
-      pickUpDate,
-      pickUpLocation,
-      dropOffDate,
-      dropOffLocation
-    }).success
-  ) {
+  if (!contactUsFormSchema.safeParse(email, message).success) {
     return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
   }
+
   const transport = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: parseInt(process.env.EMAIL_PORT as string),
@@ -44,17 +23,10 @@ export async function POST(request: NextRequest) {
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_BOOKING_FROM,
     to: process.env.EMAIL_BOOKING_TO,
-    subject: `Reservation for ${car} for ${name}`,
+    subject: `Open request`,
     text: `
-    Name: ${name}
     Email: ${email}
-    Phone: ${phone}
-    Car: ${car}
-    Color: ${color}
-    Pick up date: ${pickUpDate}
-    Pick up location: ${pickUpLocation}
-    Drop off date: ${dropOffDate}
-    Drop off location: ${dropOffLocation}
+    Message: ${message}
     `
   };
 
