@@ -98,7 +98,7 @@ const Page = () => {
             </Button>
           </form>
         </FormProvider>
-        {!error && (
+        {error && (
           <span className={"text-[#BFA37C] text-[10px]  w-full md:w-2/3"}>
             {
               "An error occurred during the submission, please try again later or contact us at "
