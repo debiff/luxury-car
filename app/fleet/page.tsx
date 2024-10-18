@@ -104,7 +104,11 @@ const FleetList = ({
 
   const filteredCars = Cars.filter(
     car => !selectedMake || car.make === selectedMake
-  ).filter(car => !selectedCategory || car.category.includes(selectedCategory));
+  )
+    .filter(car => !selectedCategory || car.category.includes(selectedCategory))
+    .sort(
+      (a, b) => a.make.localeCompare(b.make) || a.name.localeCompare(b.name)
+    );
 
   return filteredCars.length === 0 ? (
     <div className={"flex flex-col flex-1 items-center mb-16"}>
