@@ -25,7 +25,7 @@ const Car = ({
   return (
     <div key={car.id} className={"pt-8 px-8 pb-10 w-full min-h-1 bg-[#f7f5f2]"}>
       <Image
-        className={"w-full"}
+        className={"w-auto h-[160px]"}
         src={car.imageList.src}
         alt={car.name}
         width={car.imageList.width}
@@ -53,9 +53,9 @@ const Car = ({
                         leading-none
                         `}
             >
-              $
+              €
             </span>
-            <span>{car.fromPrice}</span>
+            <span>{Math.min(...Object.values(car.prices))}</span>
           </span>
           <span
             className={`

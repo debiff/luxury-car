@@ -389,32 +389,22 @@ const Page = ({ params }: Props) => {
             </section>
             <section className={"mb-[30px]"}>
               <h5 className={`${epilogue.className} text-[#0c1315] mb-4`}>
-                Prices
+                Daily prices
               </h5>
               <table id={"priceTable"}>
-                <thead className={"text-left"}>
-                  <tr>
-                    <th></th>
-                    <th className={" md:pr-10"}>Low season</th>
-                    <th>High season</th>
-                  </tr>
-                </thead>
                 <tbody>
                   {[
                     {
-                      title: "Daily",
-                      lowSeason: "700 €",
-                      highSeason: "800 €"
+                      title: "1-3 Days",
+                      price: `${car.prices["13"]} €`
                     },
                     {
-                      title: "Weekend",
-                      lowSeason: "900 €",
-                      highSeason: "1100 €"
+                      title: "7-14 Days",
+                      price: `${car.prices["714"]} €`
                     },
                     {
-                      title: "Weekly",
-                      lowSeason: "600 €",
-                      highSeason: "700 €"
+                      title: "Other",
+                      price: "Contact Us"
                     }
                   ].map((detail, index) => (
                     <tr key={index} className={"border-b border-[#d9d6ce]"}>
@@ -424,10 +414,7 @@ const Page = ({ params }: Props) => {
                         </h6>
                       </td>
                       <td className={"pb-2 pt-2"}>
-                        <h6>{detail.lowSeason}</h6>
-                      </td>
-                      <td className={"pb-2 pt-2"}>
-                        <h6>{detail.highSeason}</h6>
+                        <h6>{detail.price}</h6>
                       </td>
                     </tr>
                   ))}
