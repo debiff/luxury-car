@@ -130,7 +130,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 1,
     name: "Panamera",
     make: "Porsche",
-    category: ["Luxury"],
+    category: ["Luxury", "Executive"],
     imageList: {
       src: car1_list.src,
       width: car1_list.width,
@@ -156,7 +156,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 2,
     name: "SL 63",
     make: "Mercedes",
-    category: ["Luxury"],
+    category: ["Luxury", "Sport", "Supercar"],
     imageList: {
       src: car2_list.src,
       width: car2_list.width,
@@ -182,7 +182,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 3,
     name: "G 4x4 63",
     make: "Mercedes",
-    category: ["Luxury"],
+    category: ["Luxury", "Suv"],
     imageList: {
       src: car3_list.src,
       width: car3_list.width,
@@ -208,7 +208,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 4,
     name: "G 63",
     make: "Mercedes",
-    category: ["Luxury"],
+    category: ["Luxury", "Suv"],
     imageList: {
       src: car4_list.src,
       width: car4_list.width,
@@ -235,7 +235,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 5,
     name: "V Class",
     make: "Mercedes",
-    category: ["Luxury"],
+    category: ["Van", "Executive"],
     imageList: {
       src: car5_list.src,
       width: car5_list.width,
@@ -262,7 +262,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 6,
     name: "Range Rover Sport",
     make: "Land Rover",
-    category: ["Luxury"],
+    category: ["Suv", "Sport"],
     imageList: {
       src: car6_list.src,
       width: car6_list.width,
@@ -289,7 +289,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 7,
     name: "Defender",
     make: "Land Rover",
-    category: ["Luxury"],
+    category: ["Suv", "Luxury"],
     imageList: {
       src: car7_list.src,
       width: car7_list.width,
@@ -316,7 +316,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 8,
     name: "Q7",
     make: "Audi",
-    category: ["Luxury"],
+    category: ["Suv", "Sport"],
     imageList: {
       src: car8_list.src,
       width: car8_list.width,
@@ -343,7 +343,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 9,
     name: "Portofino",
     make: "Ferrari",
-    category: ["Luxury"],
+    category: ["Supercar", "Sport", "Luxury"],
     imageList: {
       src: car9_list.src,
       width: car9_list.width,
@@ -370,7 +370,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 10,
     name: "Huracán Evo Spyder",
     make: "Lamborghini",
-    category: ["Luxury"],
+    category: ["Supercar", "Sport", "Luxury"],
     imageList: {
       src: car10_list.src,
       width: car10_list.width,
@@ -397,7 +397,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 11,
     name: "992 4S Cabriolet",
     make: "Porsche",
-    category: ["Luxury", "Supercar"],
+    category: ["Sport", "Luxury"],
     imageList: {
       src: car11_list.src,
       width: car11_list.width,
@@ -423,7 +423,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 12,
     name: "4 Series",
     make: "BMW",
-    category: ["Luxury"],
+    category: ["Sport", "Executive"],
     imageList: {
       src: car12_list.src,
       width: car12_list.width,
@@ -449,7 +449,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 13,
     name: "Urus",
     make: "Lamborghini",
-    category: ["Luxury", "Suv", "Supercar"],
+    category: ["Suv", "Supercar", "Luxury"],
     imageList: {
       src: car13_list.src,
       width: car13_list.width,
@@ -475,7 +475,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 14,
     name: "SF90",
     make: "Ferrari",
-    category: ["Luxury", "Suv", "Supercar"],
+    category: ["Supercar", "Sport", "Luxury"],
     imageList: {
       src: car14_list.src,
       width: car14_list.width,
@@ -501,7 +501,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 15,
     name: "5 Series",
     make: "BMW",
-    category: ["Luxury", "Suv", "Supercar"],
+    category: ["Executive", "Sport"],
     imageList: {
       src: car15_list.src,
       width: car15_list.width,
@@ -527,7 +527,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 16,
     name: "Transit 9 places",
     make: "Ford",
-    category: ["Luxury", "Suv", "Supercar"],
+    category: ["Van", "Executive"],
     imageList: {
       src: car16_list.src,
       width: car16_list.width,
@@ -553,7 +553,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 17,
     name: "Rs 6",
     make: "Audi",
-    category: ["Supercar", "Luxury", "Sport"],
+    category: ["Sport", "Luxury"],
     imageList: {
       src: car17_list.src,
       width: car17_list.width,
@@ -579,7 +579,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 18,
     name: "595 Cabrio",
     make: "Abarth",
-    category: ["Supercar", "Luxury", "Sport"],
+    category: ["Sport"],
     imageList: {
       src: car18_list.src,
       width: car18_list.width,
@@ -605,7 +605,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 19,
     name: "GLE",
     make: "Mercedes",
-    category: ["Supercar", "Luxury", "Sport"],
+    category: ["Suv", "Executive"],
     imageList: {
       src: car19_list.src,
       width: car19_list.width,
@@ -631,7 +631,7 @@ export const Cars: ReadonlyArray<Car> = [
     id: 20,
     name: "F8 Spider",
     make: "Ferrari",
-    category: ["Supercar", "Luxury", "Sport"],
+    category: ["Supercar", "Sport", "Luxury"],
     imageList: {
       src: car20_list.src,
       width: car20_list.width,

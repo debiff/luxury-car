@@ -15,7 +15,15 @@ const CategoryContentMap = new Map<
       image: "/preview/luxury.webp",
       description:
         "Indulge in opulence and prestige. Elevate your journey with unmatched comfort, style, and performance.",
-      fromPrice: "500"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Luxury")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ],
   [
@@ -25,7 +33,15 @@ const CategoryContentMap = new Map<
       image: "/preview/sport.webp",
       description:
         "Experience the thrill of precision engineering and dynamic performance. Embrace the road with unparalleled agility and power.",
-      fromPrice: "180"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Sport")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ],
   [
@@ -35,7 +51,15 @@ const CategoryContentMap = new Map<
       image: "/preview/suv.webp",
       description:
         "Conquer any terrain in comfort and style. Versatile, spacious, and ready for adventure wherever you roam.",
-      fromPrice: "180"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Suv")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ],
   [
@@ -45,7 +69,15 @@ const CategoryContentMap = new Map<
       image: "/preview/van.webp",
       description:
         "Effortless versatility meets unparalleled comfort. Travel in spacious luxury, whether for business or pleasure.",
-      fromPrice: "180"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Van")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ],
   [
@@ -55,7 +87,15 @@ const CategoryContentMap = new Map<
       image: "/preview/executive.webp",
       description:
         "Sleek sophistication meets unparalleled comfort. Experience the pinnacle of luxury and refinement on every drive.",
-      fromPrice: "180"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Executive")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ],
   [
@@ -65,7 +105,15 @@ const CategoryContentMap = new Map<
       image: "/preview/supercar.webp",
       description:
         "Unleash adrenaline with breathtaking speed and unparalleled engineering. Elevate every moment with unmatched performance.",
-      fromPrice: "180"
+      fromPrice: Math.min(
+        ...Object.values(
+          Cars.filter(c => c.category.includes("Supercar")).sort(
+            (a, b) =>
+              Math.min(...Object.values(a.prices)) -
+              Math.min(...Object.values(b.prices))
+          )[0].prices
+        )
+      ).toString()
     }
   ]
 ]);
