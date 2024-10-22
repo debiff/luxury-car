@@ -344,10 +344,18 @@ const Page = ({ params }: Props) => {
                 <table id={"details"}>
                   <tbody>
                     {[
-                      { title: "Category", value: "Supercar" },
-                      { title: "Displacement", value: "3.902 cc" },
-                      { title: "Top Speed", value: "330 Km/h" },
-                      { title: "Transmission", value: "Automatic" },
+                      { title: "Category", value: `${car.category[0]}` },
+                      {
+                        title: "Displacement",
+                        value: `${car.displacement.toLocaleString()} cc`
+                      },
+                      { title: "Top Speed", value: `${car.maxSpeed} Km/h` },
+                      {
+                        title: "Transmission",
+                        value:
+                          car.transmission[0].toUpperCase() +
+                          car.transmission.slice(1)
+                      },
                       { title: "GPS", value: "Yes" }
                     ].map((detail, index) => (
                       <tr key={index} className={"border-b border-[#d9d6ce]"}>
@@ -366,11 +374,11 @@ const Page = ({ params }: Props) => {
                 <table>
                   <tbody>
                     {[
-                      { title: "Seat", value: "2" },
-                      { title: "Engine Power", value: "670 CV" },
-                      { title: "0-100 Km/h", value: "3.0 s" },
-                      { title: "Tank", value: "78 L" },
-                      { title: "Minimum Age", value: "35" }
+                      { title: "Seat", value: car.seat },
+                      { title: "Engine Power", value: `${car.enginePower} CV` },
+                      { title: "0-100 Km/h", value: `${car["0to100"]} s` },
+                      { title: "Tank", value: `${car.tank} L` },
+                      { title: "Minimum Age", value: "25" }
                     ].map((detail, index) => (
                       <tr key={index} className={"border-b border-[#d9d6ce]"}>
                         <td className={"pb-5 pt-5 w-2/3"}>

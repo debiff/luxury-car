@@ -123,6 +123,10 @@ export type Car = {
     1_3: number;
     7_14: number;
   };
+  displacement: number;
+  transmission: "automatic" | "manual";
+  seat: number;
+  tank: number;
 };
 
 export const Cars: ReadonlyArray<Car> = [
@@ -136,9 +140,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car1_list.width,
       height: car1_list.height
     },
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car1_description,
     gallery: [
@@ -150,7 +151,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 500,
       7_14: 400
-    }
+    },
+    "0to100": 3.1,
+    maxSpeed: 315,
+    enginePower: 630,
+    displacement: 3996,
+    transmission: "automatic",
+    seat: 4,
+    tank: 90
   },
   {
     id: 2,
@@ -162,9 +170,7 @@ export const Cars: ReadonlyArray<Car> = [
       width: car2_list.width,
       height: car2_list.height
     },
-    "0to100": 3.6,
-    maxSpeed: 315,
-    enginePower: 585,
+
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car2_description,
     gallery: [
@@ -176,7 +182,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 900,
       7_14: 750
-    }
+    },
+    "0to100": 3.6,
+    maxSpeed: 315,
+    enginePower: 585,
+    displacement: 3982,
+    transmission: "automatic",
+    seat: 2,
+    tank: 70
   },
   {
     id: 3,
@@ -188,9 +201,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car3_list.width,
       height: car3_list.height
     },
-    "0to100": 4.5,
-    maxSpeed: 210,
-    enginePower: 585,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car3_description,
     gallery: [
@@ -202,7 +212,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1800,
       7_14: 1400
-    }
+    },
+    "0to100": 4.5,
+    maxSpeed: 220,
+    enginePower: 585,
+    displacement: 3982,
+    transmission: "automatic",
+    seat: 5,
+    tank: 100
   },
   {
     id: 4,
@@ -214,9 +231,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car4_list.width,
       height: car4_list.height
     },
-    "0to100": 5.3,
-    maxSpeed: 272,
-    enginePower: 353,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car4_description,
     gallery: [
@@ -228,7 +242,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 900,
       7_14: 800
-    }
+    },
+    "0to100": 4.5,
+    maxSpeed: 220,
+    enginePower: 585,
+    displacement: 3982,
+    transmission: "automatic",
+    seat: 5,
+    tank: 100
   },
   {
     // https://www.alvolante.it/primo_contatto/mercedes-v-300-d
@@ -241,9 +262,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car5_list.width,
       height: car5_list.height
     },
-    "0to100": 7.9,
-    maxSpeed: 220,
-    enginePower: 239,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car5_description,
     gallery: [
@@ -255,7 +273,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 350,
       7_14: 250
-    }
+    },
+    "0to100": 7.8,
+    maxSpeed: 205,
+    enginePower: 239,
+    displacement: 2987,
+    transmission: "automatic",
+    seat: 8,
+    tank: 70
   },
   {
     // https://www.quattroruote.it/auto/land-rover/rr-sport-2-serie/range-rover-sport-30-sdv6-249-cv-s-125149201806
@@ -268,9 +293,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car6_list.width,
       height: car6_list.height
     },
-    "0to100": 7.9,
-    maxSpeed: 209,
-    enginePower: 249,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car6_description,
     gallery: [
@@ -282,7 +304,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 550,
       7_14: 380
-    }
+    },
+    "0to100": 4.5,
+    maxSpeed: 280,
+    enginePower: 530,
+    displacement: 4395,
+    transmission: "automatic",
+    seat: 5,
+    tank: 90
   },
   {
     // https://www.alvolante.it/primo_contatto/land-rover-defender-90-p400
@@ -295,9 +324,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car7_list.width,
       height: car7_list.height
     },
-    "0to100": 6,
-    maxSpeed: 191,
-    enginePower: 400,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car7_description,
     gallery: [
@@ -309,7 +335,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 550,
       7_14: 380
-    }
+    },
+    "0to100": 5.2,
+    maxSpeed: 240,
+    enginePower: 400,
+    displacement: 2996,
+    transmission: "automatic",
+    seat: 5,
+    tank: 90
   },
   {
     // https://www.quattroruote.it/auto/audi/q7-2-serie/q7-30-tdi-272-cv-quattro-tiptronic-108820201504
@@ -322,9 +355,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car8_list.width,
       height: car8_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 234,
-    enginePower: 272,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car8_description,
     gallery: [
@@ -336,7 +366,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 360,
       7_14: 300
-    }
+    },
+    "0to100": 5.9,
+    maxSpeed: 250,
+    enginePower: 340,
+    displacement: 2995,
+    transmission: "automatic",
+    seat: 7,
+    tank: 85
   },
   {
     // https://listino.motori24.ilsole24ore.com/auto-prezzi/ferrari/portofino-m/portofino-m/
@@ -349,9 +386,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car9_list.width,
       height: car9_list.height
     },
-    "0to100": 3.5,
-    maxSpeed: 320,
-    enginePower: 620,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car9_description,
     gallery: [
@@ -363,7 +397,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1250,
       7_14: 880
-    }
+    },
+    "0to100": 3.5,
+    maxSpeed: 320,
+    enginePower: 620,
+    displacement: 3855,
+    transmission: "automatic",
+    seat: 4,
+    tank: 80
   },
   {
     // https://www.lamborghini.com/it-en/modelli/huracan/huracan-evo-spyder
@@ -376,9 +417,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car10_list.width,
       height: car10_list.height
     },
-    "0to100": 3.1,
-    maxSpeed: 325,
-    enginePower: 640,
     availableColors: [{ label: "White", value: "#FFF" }],
     description: car10_description,
     gallery: [
@@ -390,7 +428,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1600,
       7_14: 1200
-    }
+    },
+    "0to100": 3.1,
+    maxSpeed: 325,
+    enginePower: 640,
+    displacement: 5204,
+    transmission: "automatic",
+    seat: 2,
+    tank: 83
   },
   {
     // https://www.porsche.com/italy/models/911/911-models/carrera-4s-cabriolet/
@@ -403,9 +448,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car11_list.width,
       height: car11_list.height
     },
-    "0to100": 3.8,
-    maxSpeed: 304,
-    enginePower: 450,
     availableColors: [{ label: "Blue", value: "#00194b" }],
     description: car11_description,
     gallery: [
@@ -417,7 +459,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1000,
       7_14: 650
-    }
+    },
+    "0to100": 3.6,
+    maxSpeed: 304,
+    enginePower: 450,
+    displacement: 2981,
+    transmission: "automatic",
+    seat: 4,
+    tank: 67
   },
   {
     id: 12,
@@ -429,9 +478,7 @@ export const Cars: ReadonlyArray<Car> = [
       width: car12_list.width,
       height: car12_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
+
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car12_description,
     gallery: [
@@ -443,7 +490,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 360,
       7_14: 300
-    }
+    },
+    "0to100": 4.3,
+    maxSpeed: 250,
+    enginePower: 374,
+    displacement: 2998,
+    transmission: "automatic",
+    seat: 4,
+    tank: 59
   },
   {
     id: 13,
@@ -455,9 +509,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car13_list.width,
       height: car13_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -469,7 +520,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1800,
       7_14: 1400
-    }
+    },
+    "0to100": 3.6,
+    maxSpeed: 305,
+    enginePower: 650,
+    displacement: 3996,
+    transmission: "automatic",
+    seat: 5,
+    tank: 85
   },
   {
     id: 14,
@@ -481,9 +539,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car14_list.width,
       height: car14_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -495,7 +550,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 3200,
       7_14: 2800
-    }
+    },
+    "0to100": 2.5,
+    maxSpeed: 340,
+    enginePower: 1000,
+    displacement: 3990,
+    transmission: "automatic",
+    seat: 2,
+    tank: 68
   },
   {
     id: 15,
@@ -507,9 +569,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car15_list.width,
       height: car15_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -521,7 +580,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 450,
       7_14: 350
-    }
+    },
+    "0to100": 5.2,
+    maxSpeed: 250,
+    enginePower: 340,
+    displacement: 2998,
+    transmission: "automatic",
+    seat: 5,
+    tank: 68
   },
   {
     id: 16,
@@ -533,9 +599,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car16_list.width,
       height: car16_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -547,7 +610,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 250,
       7_14: 200
-    }
+    },
+    "0to100": 14.3,
+    maxSpeed: 165,
+    enginePower: 170,
+    displacement: 1995,
+    transmission: "manual",
+    seat: 9,
+    tank: 70
   },
   {
     id: 17,
@@ -559,9 +629,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car17_list.width,
       height: car17_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -573,7 +640,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 900,
       7_14: 750
-    }
+    },
+    "0to100": 3.6,
+    maxSpeed: 305,
+    enginePower: 600,
+    displacement: 3996,
+    transmission: "automatic",
+    seat: 5,
+    tank: 73
   },
   {
     id: 18,
@@ -585,9 +659,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car18_list.width,
       height: car18_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -599,7 +670,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 300,
       7_14: 160
-    }
+    },
+    "0to100": 7.3,
+    maxSpeed: 225,
+    enginePower: 165,
+    displacement: 1368,
+    transmission: "manual",
+    seat: 4,
+    tank: 35
   },
   {
     id: 19,
@@ -611,9 +689,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car19_list.width,
       height: car19_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -625,7 +700,14 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 500,
       7_14: 300
-    }
+    },
+    "0to100": 5.7,
+    maxSpeed: 250,
+    enginePower: 367,
+    displacement: 2999,
+    transmission: "automatic",
+    seat: 5,
+    tank: 85
   },
   {
     id: 20,
@@ -637,9 +719,6 @@ export const Cars: ReadonlyArray<Car> = [
       width: car20_list.width,
       height: car20_list.height
     },
-    "0to100": 6.3,
-    maxSpeed: 250,
-    enginePower: 245,
     availableColors: [{ label: "Black", value: "#000000" }],
     description: car13_description,
     gallery: [
@@ -651,6 +730,13 @@ export const Cars: ReadonlyArray<Car> = [
     prices: {
       1_3: 1600,
       7_14: 1200
-    }
+    },
+    "0to100": 2.9,
+    maxSpeed: 340,
+    enginePower: 720,
+    displacement: 3902,
+    transmission: "automatic",
+    seat: 2,
+    tank: 78
   }
 ];
